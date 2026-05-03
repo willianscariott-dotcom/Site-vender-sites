@@ -12,23 +12,22 @@ interface BentoCard {
 
 const cards: BentoCard[] = [
   {
-    icon: 'search_insights',
-    title: 'SEO Programático',
-    description: 'Architecture optimized for maximum search engine crawlability with zero-latency pre-rendering capabilities.',
-    span: 'full',
-    metric: { value: 'CRAWL_RATE: 100%', label: '' },
-  },
-  {
-    icon: 'science',
-    title: 'A/B Testing Engine',
-    description: 'Server-side experiment routing without client-side flicker.',
+    icon: 'speed',
+    title: 'Velocidade Extrema (Zero-JS)',
+    description: 'Entregamos HTML/CSS puros que carregam instantaneamente.',
     span: 'default',
   },
   {
-    icon: 'public',
-    title: 'Global Edge Hosting',
-    description: 'Assets distributed across 300+ PoPs globally. Guaranteed low latency regardless of client origin.',
-    span: 'full',
+    icon: 'search',
+    title: 'Escala Infinita',
+    description: 'Criamos centenas de páginas locais otimizadas para IA (GEO) para dominar buscas de cauda longa.',
+    span: 'default',
+  },
+  {
+    icon: 'auto_graph',
+    title: 'Manutenção Evolutiva',
+    description: 'Sem taxa de setup. Você assina uma parceria de performance com otimização contínua de CRO.',
+    span: 'default',
   },
 ];
 ---
@@ -57,27 +56,4 @@ const cards: BentoCard[] = [
       )}
     </div>
   ))}
-
-  <div class="md:col-span-3 bento-border bg-zinc-950/80 backdrop-blur-[12px] p-8 rounded-lg relative overflow-hidden group flex flex-col md:flex-row items-center justify-between gap-8">
-    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
-    
-    <div>
-      <Icon name="public" class="text-primary mb-4 text-3xl" size="36px" />
-      <h3 class="font-headline-h3 text-headline-h3 mb-2">Global Edge Hosting</h3>
-      <p class="font-body-sm text-body-sm text-text-secondary max-w-xl">
-        Assets distributed across 300+ PoPs globally. Guaranteed low latency regardless of client origin.
-      </p>
-    </div>
-    
-    <div class="flex gap-4">
-      <div class="bg-surface-container-highest p-4 rounded text-center border border-border-high">
-        <div class="font-technical-mono text-technical-metric text-text-primary">300+</div>
-        <div class="font-technical-mono text-[10px] text-text-secondary mt-1">EDGE NODES</div>
-      </div>
-      <div class="bg-surface-container-highest p-4 rounded text-center border border-border-high">
-        <div class="font-technical-mono text-technical-metric text-secondary">&lt; 10ms</div>
-        <div class="font-technical-mono text-[10px] text-text-secondary mt-1">TTFB LATENCY</div>
-      </div>
-    </div>
-  </div>
 </section>

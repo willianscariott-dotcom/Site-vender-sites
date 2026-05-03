@@ -1,0 +1,51 @@
+---
+import Icon from '../Icon.astro';
+
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const steps: Step[] = [
+  {
+    number: '01',
+    title: 'Análise Técnica',
+    description: 'Avaliamos seu site atual e identificamos os gargalos de performance que estão comprometendo suas conversões.',
+  },
+  {
+    number: '02',
+    title: 'Arquitetura Puro Código',
+    description: 'Desenvolvemos sua nova landing page em Astro com HTML/CSS puro, sem dependências ou plugins desnecessários.',
+  },
+  {
+    number: '03',
+    title: 'Deploy em Edge',
+    description: 'Publicamos sua página em rede global de edge nodes, garantindo carregamento instantâneo para qualquer usuário.',
+  },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-headline-h2 text-headline-h2 text-center mb-16">
+      Como <span class="text-[#6366F1]">Funciona</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {steps.map((step, index) => (
+        <div class="relative bg-zinc-950/80 backdrop-blur-md border border-slate-800 p-8 rounded-lg">
+          <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#6366F1] rounded-lg flex items-center justify-center font-technical-mono text-technical-metric text-white">
+            {step.number}
+          </div>
+          
+          <h3 class="font-headline-h3 text-headline-h3 mt-4 mb-4">{step.title}</h3>
+          
+          <p class="font-body-sm text-body-sm text-text-secondary">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

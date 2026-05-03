@@ -1,0 +1,61 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FaqItem[] = [
+  {
+    question: 'Qual a diferença entre LPaaS e um site WordPress normal?',
+    answer: 'WordPress depende de banco de dados e plugins que adicionam peso desnecessário à página. Com LPaaS, entregamos HTML/CSS puro compilado estaticamente, eliminando todas essas camadas e garantindo carregamento em milissegundos.',
+  },
+  {
+    question: 'Quanto tempo leva para ter minha landing page no ar?',
+    answer: 'Após a aprovação do layout, entregamos a página em até 5 dias úteis. O deploy em edge network é imediato e sua página já fica disponível globalmente em minutos.',
+  },
+  {
+    question: 'Preciso pagar taxa de setup ou contratação mínima?',
+    answer: 'Não. Seguimos o modelo de assinatura mensal pura. Você pode cancelar a qualquer momento, sem multas ou condições escondidas.',
+  },
+  {
+    question: 'O que é Included no plano de manutenção evolutiva?',
+    answer: 'No plano Scale, inclui otimizações mensais de CRO baseadas em dados reais, testes A/B contínuos e ajustes de copy conforme performance das campanhas.',
+  },
+  {
+    question: 'Vocês fazem integração com Google Ads e Meta Ads?',
+    answer: 'Sim. Nossas páginas são otimizadas para máxima qualidade no Google Ads, melhorando seu Quality Score e reduzindo custo por clique. Também preparamos pixels para Meta Ads.',
+  },
+];
+---
+
+<section class="py-20">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-headline-h2 text-headline-h2 text-center mb-6">
+      Perguntas <span class="text-[#6366F1]">Frequentes</span>
+    </h2>
+    
+    <p class="font-body-base text-body-base text-text-secondary text-center max-w-2xl mx-auto mb-16">
+      Tire suas dúvidas sobre nossa metodologia e modelos de serviço.
+    </p>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-zinc-950/80 backdrop-blur-md border border-slate-800 rounded-lg overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-headline-h3 text-headline-h3 list-none">
+            <span>{faq.question}</span>
+            <span class="text-[#6366F1] group-open:rotate-180 transition-transform duration-150">▼</span>
+          </summary>
+          <div class="px-6 pb-6 font-body-sm text-body-sm text-text-secondary">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

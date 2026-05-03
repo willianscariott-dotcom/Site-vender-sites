@@ -1,0 +1,45 @@
+---
+import Icon from '../Icon.astro';
+import ListItem from '../ListItem.astro';
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-high">
+  <div class="bg-surface-container-low p-12">
+    <div class="font-technical-mono text-technical-mono text-error mb-4 flex items-center gap-2">
+      <Icon name="warning" />
+      O PROBLEMA
+    </div>
+    <h3 class="font-headline-h3 text-headline-h3 mb-4">O seu site atual está queimando o seu orçamento.</h3>
+    <ul class="space-y-4">
+      <ListItem icon="close" iconClass="text-error" color="error">
+        Construtores pesados como WordPress e Elementor geram códigos inflados.
+      </ListItem>
+      <ListItem icon="close" iconClass="text-error" color="error">
+        Destroem seu Índice de Qualidade no Google Ads.
+      </ListItem>
+      <ListItem icon="close" iconClass="text-error" color="error">
+        Encarecem cada clique do seu anúncio.
+      </ListItem>
+    </ul>
+  </div>
+
+  <div class="bg-surface p-12 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="font-technical-mono text-technical-mono text-secondary mb-4 flex items-center gap-2">
+      <Icon name="bolt" />
+      A SOLUÇÃO
+    </div>
+    <h3 class="font-headline-h3 text-headline-h3 mb-4">Engenharia de Conversão em Código Puro.</h3>
+    <ul class="space-y-4">
+      <ListItem icon="check" iconClass="text-secondary" color="success">
+        Infraestruturas ultrarrápidas sem plugins ou banco de dados lento.
+      </ListItem>
+      <ListItem icon="check" iconClass="text-secondary" color="success">
+        Mais leads com o mesmo investimento em mídia.
+      </ListItem>
+      <ListItem icon="check" iconClass="text-secondary" color="success">
+        O Google recompensa com melhor posicionamento.
+      </ListItem>
+    </ul>
+  </div>
+</section>

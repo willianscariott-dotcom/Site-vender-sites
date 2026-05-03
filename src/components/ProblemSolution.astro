@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro';
+import ListItem from './ListItem.astro';
+---
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-px bg-border-high">
+  <div class="bg-surface-container-low p-12">
+    <div class="font-technical-mono text-technical-mono text-error mb-4 flex items-center gap-2">
+      <Icon name="warning" />
+      LEGACY STACK
+    </div>
+    <h3 class="font-headline-h3 text-headline-h3 mb-4">WordPress / No-Code</h3>
+    <ul class="space-y-4">
+      <ListItem icon="close" iconClass="text-error" color="error">
+        Bloated DOM structure impacting rendering.
+      </ListItem>
+      <ListItem icon="close" iconClass="text-error" color="error">
+        Sub-optimal Time to Interactive (TTI).
+      </ListItem>
+      <ListItem icon="close" iconClass="text-error" color="error">
+        Plugin dependency hell.
+      </ListItem>
+    </ul>
+  </div>
+
+  <div class="bg-surface p-12 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none"></div>
+    <div class="font-technical-mono text-technical-mono text-secondary mb-4 flex items-center gap-2">
+      <Icon name="bolt" />
+      LPaaS.CORE
+    </div>
+    <h3 class="font-headline-h3 text-headline-h3 mb-4">Extreme Speed Pure Code</h3>
+    <ul class="space-y-4">
+      <ListItem icon="check" iconClass="text-secondary" color="success">
+        Native HTML/CSS compilation.
+      </ListItem>
+      <ListItem icon="check" iconClass="text-secondary" color="success">
+        Zero-JS baseline configuration.
+      </ListItem>
+      <ListItem icon="check" iconClass="text-secondary" color="success">
+        Edge network deployment standard.
+      </ListItem>
+    </ul>
+  </div>
+</section>

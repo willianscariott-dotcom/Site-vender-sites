@@ -1,0 +1,17 @@
+---
+import Button from './Button.astro';
+import Icon from './Icon.astro';
+---
+
+<header class="fixed top-0 w-full z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-xl">
+  <div class="1px linear-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 absolute bottom-0 left-0 w-full h-[1px]"></div>
+  <div class="max-w-screen-2xl mx-auto px-6 h-16 flex items-center justify-between shadow-none">
+    <div class="flex items-center gap-2 text-zinc-100 font-mono tracking-tighter text-lg font-black">
+      <Icon name="terminal" filled={true} class="text-indigo-500" />
+      <span>LPaaS.CORE</span>
+    </div>
+    <Button variant="cta">
+      GET_ACCESS
+    </Button>
+  </div>
+</header>

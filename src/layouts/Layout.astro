@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD,wght,XTSA,wght,YSZA,wght,TSZA,wght,ZSZA,wght,XSZA,wght,WSZA,wght,CSHA,wght,SGRA,wght,LEDA,wght,MSHS,wght,MGRG,wght,GRFF,wght,ERRD,wght,GRLO,wght,GLOW,wght,SHLN,wght,wght,opsz,wght@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-canvas-bg text-text-primary antialiased selection:bg-primary-container selection:text-on-primary-container relative min-h-screen">
+    <div class="film-grain"></div>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+  .film-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+  .bento-border {
+    border-image: linear-gradient(135deg, rgba(192, 193, 255, 0.4) 0%, rgba(31, 41, 55, 0.2) 100%) 1;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .engineering-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  body {
+    min-height: max(884px, 100dvh);
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+</style>

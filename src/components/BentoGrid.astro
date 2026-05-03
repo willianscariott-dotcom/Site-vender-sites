@@ -1,0 +1,83 @@
+---
+import Icon from './Icon.astro';
+import Button from './Button.astro';
+
+interface BentoCard {
+  icon: string;
+  title: string;
+  description: string;
+  span?: 'full' | 'default';
+  metric?: { value: string; label: string };
+}
+
+const cards: BentoCard[] = [
+  {
+    icon: 'search_insights',
+    title: 'SEO Programático',
+    description: 'Architecture optimized for maximum search engine crawlability with zero-latency pre-rendering capabilities.',
+    span: 'full',
+    metric: { value: 'CRAWL_RATE: 100%', label: '' },
+  },
+  {
+    icon: 'science',
+    title: 'A/B Testing Engine',
+    description: 'Server-side experiment routing without client-side flicker.',
+    span: 'default',
+  },
+  {
+    icon: 'public',
+    title: 'Global Edge Hosting',
+    description: 'Assets distributed across 300+ PoPs globally. Guaranteed low latency regardless of client origin.',
+    span: 'full',
+  },
+];
+---
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {cards.map((card) => (
+    <div class:list={[
+      'bento-border bg-zinc-950/80 backdrop-blur-[12px] p-8 rounded-lg relative overflow-hidden group',
+      card.span === 'full' ? 'md:col-span-2' : '',
+      card.span === 'full' && card.metric ? 'md:col-span-3' : '',
+    ]}>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
+      
+      <Icon name={card.icon} class="text-primary mb-4 text-3xl" size="36px" />
+      
+      <h3 class="font-headline-h3 text-headline-h3 mb-2">{card.title}</h3>
+      
+      <p class="font-body-sm text-body-sm text-text-secondary max-w-md">
+        {card.description}
+      </p>
+
+      {card.metric && (
+        <div class="mt-8 font-technical-mono text-technical-metric text-primary">
+          {card.metric.value}
+        </div>
+      )}
+    </div>
+  ))}
+
+  <div class="md:col-span-3 bento-border bg-zinc-950/80 backdrop-blur-[12px] p-8 rounded-lg relative overflow-hidden group flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
+    
+    <div>
+      <Icon name="public" class="text-primary mb-4 text-3xl" size="36px" />
+      <h3 class="font-headline-h3 text-headline-h3 mb-2">Global Edge Hosting</h3>
+      <p class="font-body-sm text-body-sm text-text-secondary max-w-xl">
+        Assets distributed across 300+ PoPs globally. Guaranteed low latency regardless of client origin.
+      </p>
+    </div>
+    
+    <div class="flex gap-4">
+      <div class="bg-surface-container-highest p-4 rounded text-center border border-border-high">
+        <div class="font-technical-mono text-technical-metric text-text-primary">300+</div>
+        <div class="font-technical-mono text-[10px] text-text-secondary mt-1">EDGE NODES</div>
+      </div>
+      <div class="bg-surface-container-highest p-4 rounded text-center border border-border-high">
+        <div class="font-technical-mono text-technical-metric text-secondary">&lt; 10ms</div>
+        <div class="font-technical-mono text-[10px] text-text-secondary mt-1">TTFB LATENCY</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ProblemSolution from '../components/ProblemSolution.astro';
+import BentoGrid from '../components/BentoGrid.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="LPaaS.CORE | CÓDIGO PURO. CONVERSÃO NATIVA.">
+  <Header />
+  
+  <main class="pt-24 pb-32 max-w-container-max mx-auto px-gutter flex flex-col gap-32">
+    <Hero />
+    <ProblemSolution />
+    <BentoGrid />
+  </main>
+  
+  <Footer />
+</Layout>

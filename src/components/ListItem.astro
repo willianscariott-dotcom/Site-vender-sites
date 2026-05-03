@@ -1,0 +1,33 @@
+---
+interface Props {
+  icon?: string;
+  iconFilled?: boolean;
+  iconClass?: string;
+  color?: 'default' | 'success' | 'error';
+}
+
+const { icon, iconFilled = false, iconClass = '', color = 'default' } = Astro.props;
+
+const colors = {
+  default: 'text-text-secondary',
+  success: 'text-secondary',
+  error: 'text-error',
+};
+
+const iconColors = {
+  default: 'text-text-secondary',
+  success: 'text-secondary',
+  error: 'text-error',
+};
+---
+
+<li class="flex items-start gap-3 font-body-sm text-body-sm">
+  {icon && (
+    <span class:list={['material-symbols-outlined text-[16px] mt-1', iconColors[color], iconClass]}>
+      {icon}
+    </span>
+  )}
+  <div class={colors[color]}>
+    <slot />
+  </div>
+</li>

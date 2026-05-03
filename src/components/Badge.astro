@@ -1,0 +1,33 @@
+---
+interface Props {
+  variant?: 'default' | 'success' | 'error';
+  pulse?: boolean;
+  class?: string;
+}
+
+const { variant = 'default', pulse = false, class: className = '' } = Astro.props;
+
+const variants = {
+  default: 'bg-surface-zinc backdrop-blur-[12px] border border-secondary text-secondary',
+  success: 'bg-surface-zinc backdrop-blur-[12px] border border-secondary text-secondary',
+  error: 'bg-surface-zinc backdrop-blur-[12px] border border-error text-error',
+};
+
+const dotColors = {
+  default: 'bg-secondary',
+  success: 'bg-secondary',
+  error: 'bg-error',
+};
+
+const containerStyle = variants[variant];
+const dotStyle = dotColors[variant];
+---
+
+<div class:list={['inline-flex items-center gap-2 px-3 py-1.5 rounded shadow-[0_0_10px_rgba(78,222,163,0.1)]', containerStyle, className]}>
+  {pulse && (
+    <div class:list={['w-2 h-2 rounded-full animate-pulse', dotStyle]}></div>
+  )}
+  <span class="font-technical-mono text-technical-mono">
+    <slot />
+  </span>
+</div>

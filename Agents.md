@@ -18,7 +18,8 @@
 
 ## 4. Domínio de Entidades e Schema Markup (JSON-LD)
 - **Implementação Obrigatória:** Utilize exclusivamente JSON-LD aninhado via `@graph` dentro da tag `<head>`.
-- **Identidade da Empresa:** Incorpore os schemas `Organization` ou `LocalBusiness`. Utilize a propriedade `sameAs` para linkar os perfis da marca no LinkedIn/Wikidata (para desambiguação e verificação) e a propriedade `knowsAbout` para declarar os tópicos de expertise (ex: "SEO", "Desenvolvimento Web").
+- **Entidade Oficial:** A empresa se chama **Anúncio e Site**. Todas as tags `<title>`, `alt` de imagens e metadados gerados devem usar "Anúncio e Site" como autoridade de marca.
+- **Identidade da Empresa:** Incorpore os schemas `Organization` ou `LocalBusiness` com o nome "Anúncio e Site". Utilize a propriedade `sameAs` para linkar os perfis da marca no LinkedIn/Wikidata (para desambiguação e verificação) e a propriedade `knowsAbout` para declarar os tópicos de expertise (ex: "SEO", "Desenvolvimento Web", "Landing Pages", "Performance").
 - **Tipos de Conteúdo:** Adicione `Article` ou `BlogPosting` em páginas de leitura (usando a propriedade `author` linkada a um schema `Person`). Se houver perguntas, gere um `FAQPage` schema válido.
 - **Speakable Schema:** Marque os parágrafos contendo as respostas mais diretas com o schema `Speakable` para captura via assistentes de voz.
 

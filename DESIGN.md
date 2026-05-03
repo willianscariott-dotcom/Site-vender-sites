@@ -48,3 +48,14 @@ O objetivo é clareza técnica e autoridade.
 ## 5. Copy & Tone
 * **Tom:** Direto, técnico, focado em ROI.
 * **Palavras-Chave:** Precisão, Código Puro, Latência Zero, Conversão Nativa.
+
+## 6. Brand Identity (Logotype)
+* **Nome Oficial:** Anúncio e Site
+* **Regra Estrita:** A marca é APENAS tipográfica (Wordmark). Proibido uso de ícones, símbolos ou ilustrações.
+* **Tipografia:** Inter ou Geist Sans
+* **Peso:** ExtraBold (800)
+* **Tracking:** -0.03em
+* **Cores:**
+  - "Anúncio": Text Primary (#F9FAFB - Ghost White)
+  - "Site": Primary Accent (#6366F1 - Electric Indigo)
+* **Exemplo:** `<span class="text-text-primary">Anúncio</span><span class="text-[#6366F1]">e Site</span>`

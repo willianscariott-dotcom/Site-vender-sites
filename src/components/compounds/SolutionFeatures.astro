@@ -5,6 +5,7 @@ interface Feature {
   icon: string;
   title: string;
   description: string;
+  span?: 'full' | 'default';
 }
 
 const features: Feature[] = [
@@ -12,23 +13,30 @@ const features: Feature[] = [
     icon: 'speed',
     title: 'Velocidade Extrema (Zero-JS)',
     description: 'Entregamos HTML/CSS puros que carregam instantaneamente. Sem JavaScript desnecessário, sem bibliotecas pesadas.',
+    span: 'full',
   },
   {
     icon: 'search',
     title: 'SEO Programático',
     description: 'Criamos centenas de páginas locais otimizadas para IA (GEO) para dominar buscas de cauda longa.',
+    span: 'default',
   },
   {
     icon: 'auto_graph',
     title: 'Manutenção Evolutiva',
     description: 'Sem taxa de setup. Você assina uma parceria de performance com otimização contínua de CRO.',
+    span: 'default',
   },
 ];
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
   {features.map((feature) => (
-    <div class="bento-border bg-zinc-950/80 backdrop-blur-md p-8 rounded-lg relative overflow-hidden group">
+    <div class:list={[
+      'bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 p-8 rounded-lg relative overflow-hidden group',
+      feature.span === 'full' ? 'md:col-span-2' : '',
+    ]}>
+      <div class="absolute inset-0 border-t border-l border-[#6366F1]/30 rounded-lg pointer-events-none"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
       
       <Icon name={feature.icon} class="text-[#6366F1] mb-4 text-3xl" size="36px" />

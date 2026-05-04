@@ -1,62 +1,93 @@
 ---
+interface Tier {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  highlighted?: boolean;
+  cta: string;
+}
+
+const tiers: Tier[] = [
+  {
+    name: 'Plano Essencial',
+    price: 'R$ 89/mês',
+    description: 'Fidelidade de 12 meses. Zero taxa de criação.',
+    features: [
+      '1 Landing Page de Altíssima Velocidade',
+      'Hospedagem Premium Inclusa',
+      'Botão de WhatsApp Fixo',
+      'Certificado SSL e Segurança',
+    ],
+    highlighted: false,
+    cta: 'Quero Minha Página Rápida',
+  },
+  {
+    name: 'Plano Performance',
+    price: 'A partir de R$ 297/mês',
+    description: 'Fidelidade de 12 meses. Para campanhas de alta escala.',
+    features: [
+      'Tudo do Plano Essencial',
+      'Múltiplas Landing Pages (Testes A/B)',
+      'Formulário Inteligente de Qualificação',
+      'Integração Avançada de Pixels (Meta/Google)',
+      'Suporte Prioritário para Alterações',
+    ],
+    highlighted: true,
+    cta: 'Quero Escalar Minhas Conversões',
+  },
+];
 ---
 
 <section class="py-20">
-  <div class="max-w-2xl mx-auto px-6">
+  <div class="max-w-4xl mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-4">
-      Engenharia de Conversão <span class="text-[#6366F1]">Personalizada</span>
+      Planos <span class="text-[#6366F1]">WaaS</span>
     </h2>
     
     <p class="text-zinc-400 text-center max-w-xl mx-auto mb-12">
-      Desenvolvemos infraestruturas exclusivas para empresas que já investem em anúncios e precisam parar de perder dinheiro.
+      Infraestrutura de conversão sem dor de cabeça. Você foca nos anúncios, a gente cuida da página.
     </p>
 
-    <!-- Card Premium de Aplicação -->
-    <div class="relative bg-zinc-900/40 backdrop-blur-xl border border-[#6366F1] rounded-md p-8">
-      <!-- Badge Premium -->
-      <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6366F1] text-white px-4 py-1 rounded-sm text-xs font-mono uppercase">
-        Exclusivo
-      </div>
-      
-      <div class="text-center mb-8">
-        <h3 class="text-xl font-bold text-white mb-2">Engenharia de Conversão Personalizada</h3>
-        <div class="text-4xl font-bold text-white mb-1">Projetos a partir de</div>
-        <div class="text-5xl font-bold text-[#6366F1]">R$ 5.000</div>
-        <p class="text-sm text-zinc-500 mt-2">
-          Investimento único. Infraestrutura proprietária para seu negócio.
-        </p>
-      </div>
-      
-      <ul class="space-y-4 mb-8">
-        <li class="flex items-start gap-3 text-sm text-zinc-300">
-          <span class="text-[#6366F1] mt-0.5">✓</span>
-          Landing Page exclusiva em código puro (sem WordPress)
-        </li>
-        <li class="flex items-start gap-3 text-sm text-zinc-300">
-          <span class="text-[#6366F1] mt-0.5">✓</span>
-          Otimização máxima para Google e Meta Ads
-        </li>
-        <li class="flex items-start gap-3 text-sm text-zinc-300">
-          <span class="text-[#6366F1] mt-0.5">✓</span>
-          Integração completa com WhatsApp e CRM
-        </li>
-        <li class="flex items-start gap-3 text-sm text-zinc-300">
-          <span class="text-[#6366F1] mt-0.5">✓</span>
-          Hospedagem premium e segurança incluídas
-        </li>
-        <li class="flex items-start gap-3 text-sm text-zinc-300">
-          <span class="text-[#6366F1] mt-0.5">✓</span>
-          Suporte contínuo e evoluções mensais
-        </li>
-      </ul>
-      
-      <button class="w-full py-4 px-6 bg-[#6366F1] text-white rounded-md font-mono text-base hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all duration-150">
-        Preencher Formulário de Aplicação
-      </button>
-      
-      <p class="text-xs text-zinc-600 text-center mt-4">
-        Processo seletivo. Analisamos seu negócio antes de aceitar.
-      </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {tiers.map((tier) => (
+        <div class:list={[
+          'relative bg-zinc-900/40 backdrop-blur-xl border rounded-md p-8',
+          tier.highlighted ? 'border-[#6366F1]' : 'border-zinc-800'
+        ]}>
+          {tier.highlighted && (
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6366F1] text-white px-4 py-1 rounded-sm text-xs font-mono uppercase">
+              Mais Escolhido
+            </div>
+          )}
+          
+          <h3 class="text-xl font-bold text-white mb-2">{tier.name}</h3>
+          
+          <div class="text-3xl font-bold text-white mb-1">{tier.price}</div>
+          
+          <p class="text-sm text-zinc-500 mb-6">
+            {tier.description}
+          </p>
+          
+          <ul class="space-y-3 mb-8">
+            {tier.features.map((feature) => (
+              <li class="flex items-start gap-2 text-sm text-zinc-300">
+                <span class="text-[#6366F1] mt-0.5">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <button class:list={[
+            'w-full py-3 px-6 rounded-md font-mono text-sm transition-all duration-150',
+            tier.highlighted 
+              ? 'bg-[#6366F1] text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.5)]' 
+              : 'bg-zinc-800/60 text-zinc-300 border border-zinc-700 hover:bg-zinc-800 hover:text-white'
+          ]}>
+            {tier.cta}
+          </button>
+        </div>
+      ))}
     </div>
   </div>
 </section>

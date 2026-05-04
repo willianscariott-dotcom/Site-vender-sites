@@ -1,17 +1,29 @@
 ---
-import Icon from '../Icon.astro';
-import ListItem from '../ListItem.astro';
 ---
 
-<section class="py-20">
+<section class="py-24 relative overflow-hidden">
+  <!-- Brilho de fundo -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.08)_0%,transparent_50%)] -z-10"></div>
+  
   <div class="max-w-container-max mx-auto px-gutter">
-    <h2 class="font-headline-h2 text-headline-h2 text-center mb-8">
-      O seu site atual está <span class="text-[#6366F1]">sabotando os seus anúncios</span>.
-    </h2>
-    
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="font-body-base text-body-base text-text-secondary">
-        Você paga caro para o cliente clicar no seu anúncio. Mas quando ele clica, a página demora para abrir. O resultado? Ele desiste de esperar, fecha a aba e vai comprar do seu concorrente. Construtores de sites comuns (como WordPress e Wix) são pesados e lentos, e as plataformas de anúncios punem sites lentos cobrando mais caro por cada clique.
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="font-headline-h2 text-headline-h2 mb-8">
+        O seu site atual está <span class="text-red-400">sabotando os seus anúncios</span>.
+      </h2>
+      
+      <!-- Card destacado com problema -->
+      <div class="bento-border bg-zinc-900/80 backdrop-blur-md rounded-2xl p-8 text-left">
+        <p class="font-body-base text-zinc-300 leading-relaxed">
+          Você paga caro para o cliente clicar no seu anúncio. Mas quando ele clica, a página demora para abrir. O resultado? <span class="text-red-400 font-semibold">Ele desiste de esperar, fecha a aba e vai comprar do seu concorrente.</span>
+        </p>
+        <p class="font-body-base text-zinc-400 mt-4 leading-relaxed">
+          Construtores de sites comuns (como WordPress e Wix) são pesados e lentos, e as plataformas de anúncios punem sites lentos cobrando mais caro por cada clique.
+        </p>
+      </div>
+      
+      <!-- Call to action -->
+      <p class="font-body-sm text-zinc-500 mt-8">
+        Clique no botão abaixo para descobrirmos juntos o que está sabotando seus resultados.
       </p>
     </div>
   </div>

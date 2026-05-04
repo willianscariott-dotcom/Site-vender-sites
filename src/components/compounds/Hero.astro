@@ -2,28 +2,32 @@
 import Button from '../Button.astro';
 ---
 
-<section class="relative pt-20 pb-32 flex flex-col items-center text-center">
+<section class="relative pt-20 pb-32 flex flex-col items-center text-center overflow-hidden">
+  <!-- Grid de engenharia via -->
   <div class="absolute inset-0 engineering-grid -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"></div>
   
-  <div class="bg-zinc-900/50 border border-slate-800 rounded-full px-4 py-2 mb-8 flex items-center gap-2">
-    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-    <span class="font-technical-mono text-[11px] text-zinc-400 tracking-wide">Infraestrutura validada para Google e Meta Ads</span>
+  <!-- Brilho radial sutil no centro -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-3xl -z-10"></div>
+  
+  <div class="bg-zinc-900/60 border border-slate-800/60 rounded-full px-5 py-2.5 mb-8 flex items-center gap-3 backdrop-blur-sm">
+    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+    <span class="font-technical-mono text-[11px] text-zinc-400 tracking-wide uppercase">Infraestrutura validada</span>
   </div>
 
-  <h1 class="font-headline-h1 text-headline-h1 max-w-4xl mb-6">
+  <h1 class="font-headline-h1 text-headline-h1 max-w-3xl mb-6 px-4">
     Páginas Ultrarrápidas que Transformam Cliques em Clientes.
   </h1>
 
-  <p class="font-body-base text-body-base text-text-secondary max-w-2xl mb-10 px-4">
+  <p class="font-body-base text-body-base text-text-secondary max-w-xl mb-10 px-4 leading-relaxed">
     Substitua seu site lento por uma infraestrutura de código puro. Pare de perder vendas para a concorrência e faça cada centavo investido no Google e no Meta Ads valer a pena.
   </p>
 
-  <div class="flex flex-col gap-4 items-center w-full px-4 mt-4">
-    <Button variant="primary" class="w-full max-w-sm text-base py-5">Solicitar Análise de Performance</Button>
+  <div class="flex flex-col gap-4 items-center w-full px-4 mt-2">
+    <Button variant="primary" class="w-full max-w-sm text-base py-5 shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_40px_rgba(99,102,241,0.5)]">Solicitar Análise de Performance</Button>
     <Button variant="secondary" class="w-full max-w-sm text-base py-5">Como Funciona</Button>
   </div>
   
-  <p class="font-body-sm text-text-secondary mt-8 px-4">
-    Zero taxa de setup. Infraestrutura e hospedagem inclusas.
+  <p class="font-body-sm text-zinc-500 mt-8 px-4">
+    Zero taxa de setup • Infraestrutura e hospedagem inclusas
   </p>
 </section>

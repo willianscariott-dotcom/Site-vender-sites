@@ -59,3 +59,13 @@ O objetivo é clareza técnica e autoridade.
   - "Anúncio": Text Primary (#F9FAFB - Ghost White)
   - "Site": Primary Accent (#6366F1 - Electric Indigo)
 * **Exemplo:** `<span class="text-text-primary">Anúncio</span><span class="text-[#6366F1]">e Site</span>`
+
+## 7. Geometria Padronizada (Industrial sobriety)
+* **Raio de Borda:** Todos os cartões, botões e contêineres DEVEM ter raio de borda de EXATOS 4px (rounded-sm) ou cantos totalmente retos (rounded-none).
+* **PROIBIDO:** Botões em formato pill (rounded-full, rounded-full, oval). O aspecto deve ser industrial e sóbrio.
+* **Regra:** Manter consistência visual entre cards do Bento Grid e botões CTA.
+
+## 8. Ancoragem Visual (Masked Borders)
+* **Estrutura de Gaiola:** Elementos não devem flutuar. Usar Masked Borders (linhas de grid de 1px em border-slate-800 ou slate-900).
+* **Efeito:** Criar uma estrutura de gaiola de engenharia visível ao redor de cada seção e cartão.
+* **Implementação:** `border border-slate-800` em todos os contêineres, cards e elementos deUI.

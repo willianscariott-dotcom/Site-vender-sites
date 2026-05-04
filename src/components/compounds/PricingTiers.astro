@@ -11,8 +11,8 @@ interface Tier {
 
 const tiers: Tier[] = [
   {
-    name: 'Growth',
-    price: 'R$ 997/mês',
+    name: '[ A DEFINIR ]',
+    price: '[ A DEFINIR ]',
     description: 'Ideal para pequenas empresas que querem acelerar resultados.',
     features: [
       '1 Landing Page otimizada',
@@ -23,8 +23,8 @@ const tiers: Tier[] = [
     ],
   },
   {
-    name: 'Scale',
-    price: 'R$ 2.497/mês',
+    name: '[ A DEFINIR ]',
+    price: '[ A DEFINIR ]',
     description: 'Para médias empresas que precisam de escala.',
     features: [
       '5 Landing Pages',
@@ -42,7 +42,7 @@ const tiers: Tier[] = [
 <section class="py-20">
   <div class="max-w-container-max mx-auto px-gutter">
     <h2 class="font-headline-h2 text-headline-h2 text-center mb-6">
-      Planos de <span class="text-[#6366F1]">Assinatura</span>
+      Infraestrutura de Alta Performance para o seu <span class="text-[#6366F1]">Crescimento</span>.
     </h2>
     
     <p class="font-body-base text-body-base text-text-secondary text-center max-w-2xl mx-auto mb-16">
@@ -52,7 +52,7 @@ const tiers: Tier[] = [
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       {tiers.map((tier) => (
         <div class:list={[
-          'relative bg-zinc-950/80 backdrop-blur-md border rounded-lg p-8',
+          'relative bg-zinc-950/80 backdrop-blur-[12px] border rounded-lg p-8',
           tier.highlighted ? 'border-[#6366F1]' : 'border-slate-800'
         ]}>
           {tier.highlighted && (

@@ -6,24 +6,16 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: 'Qual a diferença entre LPaaS e um site WordPress normal?',
-    answer: 'WordPress depende de banco de dados e plugins que adicionam peso desnecessário à página. Com LPaaS, entregamos HTML/CSS puro compilado estaticamente, eliminando todas essas camadas e garantindo carregamento em milissegundos.',
+    question: 'Eu já tenho um site institucional, preciso de uma landing page?',
+    answer: 'Sim. Um site institucional é como um catálogo cheio de rotas de fuga. Uma landing page é desenhada exclusivamente para receber quem clicou no seu anúncio e fazê-lo entrar em contato.',
   },
   {
-    question: 'Quanto tempo leva para ter minha landing page no ar?',
-    answer: 'Após a aprovação do layout, entregamos a página em até 5 dias úteis. O deploy em edge network é imediato e sua página já fica disponível globalmente em minutos.',
+    question: 'Eu preciso pagar hospedagem ou domínio à parte?',
+    answer: 'A hospedagem de altíssima velocidade e a segurança já estão inclusas na sua assinatura. Você só precisa ter o seu domínio.',
   },
   {
-    question: 'Preciso pagar taxa de setup ou contratação mínima?',
-    answer: 'Não. Seguimos o modelo de assinatura mensal pura. Você pode cancelar a qualquer momento, sem multas ou condições escondidas.',
-  },
-  {
-    question: 'O que é Included no plano de manutenção evolutiva?',
-    answer: 'No plano Scale, inclui otimizações mensais de CRO baseadas em dados reais, testes A/B contínuos e ajustes de copy conforme performance das campanhas.',
-  },
-  {
-    question: 'Vocês fazem integração com Google Ads e Meta Ads?',
-    answer: 'Sim. Nossas páginas são otimizadas para máxima qualidade no Google Ads, melhorando seu Quality Score e reduzindo custo por clique. Também preparamos pixels para Meta Ads.',
+    question: 'E se eu quiser cancelar?',
+    answer: 'Nós não queremos prender você. O cancelamento pode ser solicitado a qualquer momento de acordo com os termos do seu pacote.',
   },
 ];
 ---
@@ -40,7 +32,7 @@ const faqs: FaqItem[] = [
 
     <div class="max-w-3xl mx-auto space-y-4">
       {faqs.map((faq, index) => (
-        <details class="group bg-zinc-950/80 backdrop-blur-md border border-slate-800 rounded-lg overflow-hidden">
+        <details class="group bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 rounded-lg overflow-hidden">
           <summary class="flex items-center justify-between p-6 cursor-pointer font-headline-h3 text-headline-h3 list-none">
             <span>{faq.question}</span>
             <span class="text-[#6366F1] group-open:rotate-180 transition-transform duration-150">▼</span>

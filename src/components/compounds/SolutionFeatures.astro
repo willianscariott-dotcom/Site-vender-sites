@@ -11,41 +11,49 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: 'speed',
-    title: 'Velocidade Extrema (Zero-JS)',
-    description: 'Entregamos HTML/CSS puros que carregam instantaneamente. Sem JavaScript desnecessário, sem bibliotecas pesadas.',
+    title: 'Velocidade Imediata.',
+    description: 'Nós construímos o seu site em código puro, sem plugins pesados. A página abre em um piscar de olhos, garantindo que todo visitante veja a sua oferta instantaneamente.',
     span: 'full',
   },
   {
-    icon: 'search',
-    title: 'SEO Programático',
-    description: 'Criamos centenas de páginas locais otimizadas para IA (GEO) para dominar buscas de cauda longa.',
+    icon: 'shopping_cart',
+    title: 'Foco Total em Vendas.',
+    description: 'Removemos menus confusos e distrações. Sua página terá um único objetivo: guiar o visitante diretamente para o contato com a sua equipe.',
     span: 'default',
   },
   {
-    icon: 'auto_graph',
-    title: 'Manutenção Evolutiva',
-    description: 'Sem taxa de setup. Você assina uma parceria de performance com otimização contínua de CRO.',
+    icon: 'build',
+    title: 'Você Foca no Negócio, Nós na Tecnologia.',
+    description: 'Esqueça atualizações de sistema ou quedas de servidor. Nossa assinatura inclui hospedagem de ponta e segurança total. Seu site nunca sai do ar.',
     span: 'default',
   },
 ];
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {features.map((feature) => (
-    <div class:list={[
-      'bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 p-8 rounded-lg relative overflow-hidden group',
-      feature.span === 'full' ? 'md:col-span-2' : '',
-    ]}>
-      <div class="absolute inset-0 border-t border-l border-[#6366F1]/30 rounded-lg pointer-events-none"></div>
-      <div class="absolute inset-0 bg-gradient-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
-      
-      <Icon name={feature.icon} class="text-[#6366F1] mb-4 text-3xl" size="36px" />
-      
-      <h3 class="font-headline-h3 text-headline-h3 mb-2">{feature.title}</h3>
-      
-      <p class="font-body-sm text-body-sm text-text-secondary">
-        {feature.description}
-      </p>
+<section class="py-20">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <h2 class="font-headline-h2 text-headline-h2 text-center mb-12">
+      Engenharia de conversão. <span class="text-[#6366F1]">Sem enrolação.</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {features.map((feature) => (
+        <div class:list={[
+          'bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 p-8 rounded-lg relative overflow-hidden group',
+          feature.span === 'full' ? 'md:col-span-2' : '',
+        ]}>
+          <div class="absolute inset-0 border-t border-l border-[#6366F1]/30 rounded-lg pointer-events-none"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
+          
+          <Icon name={feature.icon} class="text-[#6366F1] mb-4 text-3xl" size="36px" />
+          
+          <h3 class="font-headline-h3 text-headline-h3 mb-2">{feature.title}</h3>
+          
+          <p class="font-body-sm text-body-sm text-text-secondary">
+            {feature.description}
+          </p>
+        </div>
+      ))}
     </div>
-  ))}
+  </div>
 </section>

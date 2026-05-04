@@ -1,31 +1,25 @@
 ---
-import Icon from '../Icon.astro';
-
 interface Feature {
-  icon: string;
+  icon: 'zap' | 'target' | 'shield';
   title: string;
   description: string;
-  span?: 'full' | 'default';
 }
 
 const features: Feature[] = [
   {
-    icon: 'speed',
-    title: 'Velocidade Imediata.',
+    icon: 'zap',
+    title: 'Velocidade Imediata',
     description: 'Nós construímos o seu site em código puro, sem plugins pesados. A página abre em um piscar de olhos, garantindo que todo visitante veja a sua oferta instantaneamente.',
-    span: 'full',
   },
   {
-    icon: 'shopping_cart',
-    title: 'Foco Total em Vendas.',
-    description: 'Removemos menus confusos e distrações. Sua página terá um único objetivo: guiar o visitante diretamente para o contato com a sua equipe.',
-    span: 'default',
+    icon: 'target',
+    title: 'Foco Total em Vendas',
+    description: 'Removemos menus confusos e distrações. Sua página terá um único objetivo: guiar o visitantes diretamente para o contato com a sua equipe.',
   },
   {
-    icon: 'build',
-    title: 'Você Foca no Negócio, Nós na Tecnologia.',
+    icon: 'shield',
+    title: 'Você Foca no Negócio, Nós na Tecnologia',
     description: 'Esqueça atualizações de sistema ou quedas de servidor. Nossa assinatura inclui hospedagem de ponta e segurança total. Seu site nunca sai do ar.',
-    span: 'default',
   },
 ];
 ---
@@ -38,21 +32,31 @@ const features: Feature[] = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {features.map((feature) => (
-        <div class:list={[
-          'bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 p-8 rounded-lg relative overflow-hidden group',
-          feature.span === 'full' ? 'md:col-span-2' : '',
-        ]}>
-          <div class="absolute inset-0 border-t border-l border-[#6366F1]/30 rounded-lg pointer-events-none"></div>
-          <div class="absolute inset-0 bg-gradient-to-br from-[#6366F1]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-150"></div>
+        <article class="bg-zinc-900/40 border border-slate-800 rounded-2xl p-8 backdrop-blur-md hover:border-indigo-500/50 transition-colors group">
+          <div class="mb-6">
+            {feature.icon === 'zap' && (
+              <svg class="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            )}
+            {feature.icon === 'target' && (
+              <svg class="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+              </svg>
+            )}
+            {feature.icon === 'shield' && (
+              <svg class="w-10 h-10 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>
+            )}
+          </div>
           
-          <Icon name={feature.icon} class="text-[#6366F1] mb-4 text-3xl" size="36px" />
-          
-          <h3 class="font-headline-h3 text-headline-h3 mb-2">{feature.title}</h3>
+          <h3 class="font-headline-h3 text-headline-h3 mb-3">{feature.title}</h3>
           
           <p class="font-body-sm text-body-sm text-text-secondary">
             {feature.description}
           </p>
-        </div>
+        </article>
       ))}
     </div>
   </div>

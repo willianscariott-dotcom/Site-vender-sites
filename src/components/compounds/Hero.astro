@@ -2,35 +2,65 @@
 import Button from '../Button.astro';
 ---
 
-<section class="relative pt-32 pb-20 flex flex-col items-center text-center overflow-hidden">
+<section class="relative pt-32 pb-16 flex flex-col items-center text-center overflow-hidden">
   <!-- Container centralizado -->
-  <div class="max-w-5xl mx-auto text-center px-6">
-    <!-- Badge industrial -->
-    <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest border border-indigo-500/30 bg-indigo-500/5 px-4 py-2 rounded-md inline-flex items-center gap-3 mb-8">
-      <span class="w-2 h-2 rounded-sm bg-emerald-500 animate-pulse shadow-[0_0_6px_rgba(16,185,129,0.8)]"></span>
-      <span>Nota Máxima no Google</span>
-      <span class="text-zinc-600">//</span>
-      <span class="text-zinc-500">Velocidade de Resposta</span>
+  <div class="max-w-4xl mx-auto text-center px-6">
+    <!-- Badge minimalista -->
+    <div class="inline-flex items-center gap-2 text-xs text-emerald-500 mb-8">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="font-medium">Nota Máxima no Google Pagespeed</span>
     </div>
 
     <!-- H1 -->
-    <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-8 leading-[1.1]">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
       O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.
     </h1>
 
     <!-- Subtítulo -->
-    <p class="text-xl text-zinc-400 max-w-2xl mx-auto mt-4 leading-relaxed">
-      Se a sua página demora para abrir, você está pagando para o cliente ir comprar no concorrente. Criamos páginas ultrarrápidas focadas em uma única coisa: fazer o seu telefone tocar.
+    <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mt-4 leading-relaxed">
+      Páginas ultra-rápidas que não deixam o cliente do seu anúncio ir embora. Substituímos seu site lento por uma estrutura focada em uma única coisa: fazer seu telefone tocar.
     </p>
 
-    <!-- Botão CTA -->
-    <div class="flex flex-col sm:flex-row gap-3 items-center justify-center mt-10">
-      <Button variant="primary">Ver Planos</Button>
+    <!-- Botão CTA vibrante -->
+    <div class="mt-10">
+      <Button variant="primary" class="text-base px-10 py-4">Ver Planos</Button>
     </div>
     
-    <!-- Micro-copy -->
-    <p class="font-mono text-xs text-zinc-600 mt-8 tracking-wide">
-      Páginas que carregam em menos de 1 segundo
-    </p>
+    <!-- Comparativo de Carregamento -->
+    <div class="max-w-lg mx-auto mt-12 w-full space-y-3">
+      <!-- Barra 1: Site Atual -->
+      <div class="text-left">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-sm text-zinc-500">Seu Site Atual (WordPress/Wix)</span>
+          <span class="text-xs text-red-400">Perdendo clientes...</span>
+        </div>
+        <div class="h-2 bg-zinc-800 rounded-sm overflow-hidden">
+          <div class="h-full w-[85%] bg-zinc-700 rounded-sm"></div>
+        </div>
+      </div>
+      
+      <!-- Barra 2: Anúncio e Site -->
+      <div class="text-left">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-sm text-white font-medium">Tecnologia Anúncio e Site</span>
+          <span class="text-xs text-emerald-500">O cliente chama na hora!</span>
+        </div>
+        <div class="h-2 bg-zinc-800 rounded-sm overflow-hidden">
+          <div class="h-full w-[12%] bg-[#6366F1] rounded-sm shadow-[0_0_12px_rgba(99,102,241,0.6)]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Signal - Humanização -->
+    <div class="flex items-center justify-center gap-3 mt-10 pt-6 border-t border-zinc-800">
+      <div class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center">
+        <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </div>
+      <p class="text-sm text-zinc-500 max-w-md">
+        A tecnologia de uma startup do Vale do Silício, com o suporte humano que o seu negócio precisa.
+      </p>
+    </div>
   </div>
 </section>

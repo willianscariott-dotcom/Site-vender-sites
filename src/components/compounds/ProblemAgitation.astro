@@ -1,20 +1,21 @@
 ---
 ---
 
-<section class="py-24 relative overflow-hidden">
-  <!-- Brilho de fundo -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(239,68,68,0.08)_0%,transparent_50%)] -z-10"></div>
+<section class="py-24 relative overflow-hidden bg-transparent">
+  <!-- Subtle ambient glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-zinc-900/50 blur-[120px] rounded-full pointer-events-none -z-10"></div>
   
   <div class="max-w-container-max mx-auto px-gutter">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="font-headline-h2 text-headline-h2 mb-8">
-        SEU SITE PODE ESTAR <span class="text-red-400">ACABANDO COM SUAS VENDAS</span>.
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-['Outfit'] text-4xl md:text-5xl font-bold mb-10 text-white tracking-tight">
+        Seu site atual pode estar <span class="text-zinc-500 line-through decoration-red-500/50 decoration-4">sabotando</span> suas vendas.
       </h2>
       
       <!-- Card destacado com problema -->
-      <div class="bento-border bg-zinc-900/80 backdrop-blur-md rounded-2xl p-8 text-left">
-        <p class="font-body-base text-zinc-300 leading-relaxed">
-          Você paga caro para o cliente clicar no seu anúncio. Mas quando ele clica, a página demora para abrir. O resultado? <span class="text-red-400 font-semibold">Ele desiste de esperar, fecha a aba e vai comprar do seu concorrente.</span>
+      <div class="bg-[#111115]/90 backdrop-blur-xl border border-red-900/20 rounded-3xl p-10 text-left shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/20 to-transparent"></div>
+        <p class="font-body-base text-zinc-300 leading-relaxed text-lg">
+          Você paga caro para o cliente clicar no seu anúncio. Mas quando ele clica, a página demora para abrir. O resultado? <span class="text-white font-medium bg-red-500/10 px-2 py-1 rounded-md">Ele desiste de esperar e vai comprar do seu concorrente.</span>
         </p>
         <p class="font-body-base text-zinc-400 mt-4 leading-relaxed">
           Construtores de sites comuns (como WordPress e Wix) são pesados e lentos, e as plataformas de anúncios punem sites lentos cobrando mais caro por cada clique.

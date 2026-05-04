@@ -24,21 +24,30 @@ const steps: Step[] = [
 ];
 ---
 
-<section class="w-full max-w-7xl mx-auto px-6 py-24 bg-black">
-  <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-12">
+<section class="w-full max-w-7xl mx-auto px-6 py-32 bg-transparent">
+  <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white text-center mb-24 font-['Outfit']">
     Do zero à sua página no ar, <span class="text-[#6366F1]">sem dor de cabeça</span>.
   </h2>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
       {steps.map((step, index) => (
-        <div class="relative bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 p-8 rounded-md group">
-          <div class="absolute -top-3 left-4 font-mono text-3xl font-bold text-[#6366F1]">
+        <div class:list={[
+          "relative bg-[#111115]/60 backdrop-blur-xl border border-zinc-800/60 p-10 rounded-3xl group overflow-hidden transition-all duration-500 hover:border-zinc-700 hover:bg-[#111115]/80",
+          index === 1 ? "md:mt-12" : index === 2 ? "md:mt-24" : ""
+        ]}>
+          <!-- Huge faded number in background -->
+          <div class="absolute -bottom-6 -right-6 font-['Outfit'] text-[120px] font-bold text-white/[0.02] pointer-events-none select-none transition-all duration-500 group-hover:scale-110 group-hover:text-white/[0.04]">
             {step.number}
           </div>
           
-          <h3 class="text-xl font-bold text-white mt-8 mb-4">{step.title}</h3>
+          <div class="font-mono text-sm font-medium text-[#6366F1] mb-6 flex items-center gap-2">
+            <div class="w-8 h-px bg-[#6366F1]/50"></div>
+            ETAPA {step.number}
+          </div>
           
-          <p class="text-sm text-zinc-400 leading-relaxed">
+          <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit'] tracking-tight relative z-10">{step.title}</h3>
+          
+          <p class="text-base text-zinc-400 leading-relaxed relative z-10">
             {step.description}
           </p>
         </div>

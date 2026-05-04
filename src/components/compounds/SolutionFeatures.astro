@@ -28,18 +28,22 @@ const features: Feature[] = [
 ];
 ---
 
-<section class="w-full max-w-7xl mx-auto px-6 py-24 bg-black">
+<section class="w-full max-w-7xl mx-auto px-6 py-24 bg-transparent">
   <!-- Título da seção -->
-  <div class="text-center mb-16">
-    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-4">
+  <div class="text-center mb-20">
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 font-['Outfit']">
       Os 3 Pilares Para Transformar <span class="text-[#6366F1]">Cliques em Clientes</span>
     </h2>
   </div>
 
   <!-- Bento Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-16">
     {features.map((feature, index) => (
-      <article class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 rounded-md p-8 lg:p-10 relative overflow-hidden group hover:border-[#6366F1]/50 transition-all duration-300">
+      <article class:list={[
+        "bg-[#111115]/80 backdrop-blur-xl border border-zinc-800/80 rounded-3xl p-8 lg:p-10 relative overflow-hidden group hover:border-[#6366F1]/50 transition-all duration-500 shadow-2xl",
+        index === 0 ? "md:col-span-2" : "",
+        index === 2 ? "md:col-span-3 md:flex md:items-center md:gap-12" : ""
+      ]}>
         <!-- Badge STATUS: ATIVO -->
         <div class="absolute top-4 left-4 font-mono text-[10px] text-emerald-500 flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_6px_rgba(16,185,129,0.8)]"></span>
@@ -52,11 +56,11 @@ const features: Feature[] = [
         </div>
         
         <!-- Brilho de canto -->
-        <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-500/10 transition-all duration-700"></div>
         
-        <div class="relative z-10 mt-4">
+        <div class="relative z-10 w-full">
           <!-- Ícone em container de vidro -->
-          <div class="mb-6 p-4 bg-zinc-800/30 rounded-2xl w-fit border border-zinc-700/50">
+          <div class="mb-8 p-4 bg-zinc-800/20 rounded-2xl w-fit border border-zinc-700/30 backdrop-blur-md">
             {feature.icon === 'zap' && (
               <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -74,11 +78,13 @@ const features: Feature[] = [
             )}
           </div>
           
-          <h3 class="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-          
-          <p class="text-zinc-400 leading-relaxed">
-            {feature.description}
-          </p>
+          <div class={index === 2 ? "md:flex-1" : ""}>
+            <h3 class="text-2xl font-semibold text-white mb-4 font-['Outfit'] tracking-tight">{feature.title}</h3>
+            
+            <p class="text-zinc-400 leading-relaxed text-base">
+              {feature.description}
+            </p>
+          </div>
         </div>
       </article>
     ))}

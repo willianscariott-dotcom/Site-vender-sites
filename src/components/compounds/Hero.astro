@@ -26,27 +26,27 @@ import Button from '../Button.astro';
       <Button variant="primary" class="text-base px-10 py-4">Ver Planos</Button>
     </div>
     
-    <!-- Comparativo de Carregamento -->
-    <div class="max-w-lg mx-auto mt-12 w-full space-y-3">
-      <!-- Barra 1: Site Atual -->
+    <!-- Comparativo Antes e Depois -->
+    <div class="max-w-lg mx-auto mt-12 w-full space-y-4">
+      <!-- Barra 1: Site Comum (Lento) -->
       <div class="text-left">
-        <div class="flex justify-between items-center mb-1">
-          <span class="text-sm text-zinc-500">Seu Site Atual (WordPress/Wix)</span>
-          <span class="text-xs text-red-400">Perdendo clientes...</span>
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-medium text-zinc-500">Site Comum</span>
+          <span class="text-xs text-red-400">Perdendo o cliente...</span>
         </div>
-        <div class="h-2 bg-zinc-800 rounded-sm overflow-hidden">
-          <div class="h-full w-[85%] bg-zinc-700 rounded-sm"></div>
+        <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
+          <div class="h-full w-[30%] bg-zinc-600 rounded-sm"></div>
         </div>
       </div>
       
-      <!-- Barra 2: Anúncio e Site -->
+      <!-- Barra 2: Anúncio e Site (Instantâneo) -->
       <div class="text-left">
-        <div class="flex justify-between items-center mb-1">
-          <span class="text-sm text-white font-medium">Tecnologia Anúncio e Site</span>
-          <span class="text-xs text-emerald-500">O cliente chama na hora!</span>
+        <div class="flex justify-between items-center mb-2">
+          <span class="text-sm font-bold text-white">Engenharia Anúncio e Site</span>
+          <span class="text-xs text-emerald-500 font-medium">O cliente chama na hora!</span>
         </div>
-        <div class="h-2 bg-zinc-800 rounded-sm overflow-hidden">
-          <div class="h-full w-[12%] bg-[#6366F1] rounded-sm shadow-[0_0_12px_rgba(99,102,241,0.6)]"></div>
+        <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
+          <div class="h-full w-full bg-[#6366F1] rounded-sm shadow-[0_0_16px_rgba(99,102,241,0.5)]"></div>
         </div>
       </div>
     </div>

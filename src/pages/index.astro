@@ -11,12 +11,13 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Anúncio e Site | Landing Pages Ultrarrápidas">
-  <!-- Brilho radial no topo -->
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+  <!-- Spotlights -->
+  <div class="fixed top-0 left-0 w-[600px] h-[600px] bg-[#6366F1]/3 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed bottom-0 right-0 w-[600px] h-[600px] bg-[#6366F1]/3 blur-[150px] rounded-full pointer-events-none -z-10"></div>
   
   <Header />
   
-  <main class="relative bg-black bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:16px_16px]">
+  <main class="relative bg-black">
     <div class="max-w-container-max mx-auto flex flex-col gap-24">
       <Hero />
       <ProblemAgitation />

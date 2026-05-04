@@ -7,80 +7,87 @@ interface Tier {
   description: string;
   features: string[];
   highlighted?: boolean;
+  cta: string;
 }
 
 const tiers: Tier[] = [
   {
-    name: '[ A DEFINIR ]',
-    price: '[ A DEFINIR ]',
-    description: 'Ideal para pequenas empresas que querem acelerar resultados.',
+    name: 'Plano Essencial',
+    price: 'R$ 89/mês',
+    description: 'Fidelidade de 12 meses. Zero taxa de criação.',
     features: [
-      '1 Landing Page otimizada',
-      'Hospedagem Edge Global',
-      'SSL Grátis',
-      'Suporte por email',
-      'Relatório mensal de performance',
+      '1 Landing Page de Altíssima Velocidade',
+      'Hospedagem Premium Inclusa',
+      'Botão de WhatsApp Fixo',
+      'Certificado SSL e Segurança',
     ],
+    highlighted: false,
+    cta: 'Quero Minha Página Rápida',
   },
   {
-    name: '[ A DEFINIR ]',
-    price: '[ A DEFINIR ]',
-    description: 'Para médias empresas que precisam de escala.',
+    name: 'Plano Performance',
+    price: 'A partir de R$ 297/mês',
+    description: 'Fidelidade de 12 meses. Para campanhas de alta escala.',
     features: [
-      '5 Landing Pages',
-      'SEO Programático (até 50 páginas)',
-      'A/B Testing contínuo',
-      'API de integrações',
-      'Priority support',
-      'CRO evolutivo mensal',
+      'Tudo do Plano Essencial',
+      'Múltiplas Landing Pages (Testes A/B)',
+      'Formulário Inteligente de Qualificação',
+      'Integração Avançada de Pixels (Meta/Google)',
+      'Suporte Prioritário para Alterações',
     ],
     highlighted: true,
+    cta: 'Quero Escalar Minhas Conversões',
   },
 ];
 ---
 
 <section class="py-20">
-  <div class="max-w-container-max mx-auto px-gutter">
-    <h2 class="font-headline-h2 text-headline-h2 text-center mb-6">
-      Infraestrutura de Alta Performance para o seu <span class="text-[#6366F1]">Crescimento</span>.
+  <div class="max-w-container-max mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-4">
+      Planos <span class="text-[#6366F1]">LPaaS</span>
     </h2>
     
-    <p class="font-body-base text-body-base text-text-secondary text-center max-w-2xl mx-auto mb-16">
-      Sem taxa de setup. Sem surprises. Pague mensalmente e tenha sua infraestrutura de conversão sempre otimizada.
+    <p class="text-zinc-400 text-center max-w-xl mx-auto mb-12">
+      Infraestrutura de conversão sem dor de cabeça. Você foca nos anúncios, a gente cuida da página.
     </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       {tiers.map((tier) => (
         <div class:list={[
-          'relative bg-zinc-950/80 backdrop-blur-[12px] border rounded-lg p-8',
-          tier.highlighted ? 'border-[#6366F1]' : 'border-slate-800'
+          'relative bg-zinc-900/40 backdrop-blur-xl border rounded-md p-8',
+          tier.highlighted ? 'border-[#6366F1]' : 'border-[#111827]'
         ]}>
           {tier.highlighted && (
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6366F1] text-white px-4 py-1 rounded-full text-xs font-technical-mono uppercase">
-              Mais Popular
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#6366F1] text-white px-4 py-1 rounded-sm text-xs font-mono uppercase">
+              Mais Escolhido
             </div>
           )}
           
-          <h3 class="font-headline-h3 text-headline-h3 mb-2">{tier.name}</h3>
+          <h3 class="text-xl font-bold text-white mb-2">{tier.name}</h3>
           
-          <div class="text-3xl font-bold text-white mb-2">{tier.price}</div>
+          <div class="text-3xl font-bold text-white mb-1">{tier.price}</div>
           
-          <p class="font-body-sm text-body-sm text-text-secondary mb-6">
+          <p class="text-sm text-zinc-500 mb-6">
             {tier.description}
           </p>
           
           <ul class="space-y-3 mb-8">
             {tier.features.map((feature) => (
-              <li class="flex items-center gap-2 font-body-sm text-body-sm text-zinc-300">
-                <span class="text-[#6366F1]">✓</span>
+              <li class="flex items-start gap-2 text-sm text-zinc-300">
+                <span class="text-[#6366F1] mt-0.5">✓</span>
                 {feature}
               </li>
             ))}
           </ul>
           
-          <Button variant={tier.highlighted ? 'primary' : 'secondary'} class="w-full">
-            Começar Agora
-          </Button>
+          <button class:list={[
+            'w-full py-3 px-6 rounded-md font-mono text-sm transition-all duration-150',
+            tier.highlighted 
+              ? 'bg-[#6366F1] text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.5)]' 
+              : 'bg-zinc-800/60 text-zinc-300 border border-[#111827] hover:bg-zinc-800 hover:text-white'
+          ]}>
+            {tier.cta}
+          </button>
         </div>
       ))}
     </div>

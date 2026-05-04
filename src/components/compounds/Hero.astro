@@ -3,19 +3,9 @@ import Button from '../Button.astro';
 ---
 
 <section class="relative pt-32 pb-20 flex flex-col items-center text-center overflow-hidden">
-  <!-- Grid Lines de Ancoragem (gaiola técnica) -->
-  <div class="absolute inset-0 pointer-events-none -z-10">
-    <div class="absolute top-1/4 left-0 right-0 h-px bg-[#111827]"></div>
-    <div class="absolute top-2/4 left-0 right-0 h-px bg-[#111827]"></div>
-    <div class="absolute top-3/4 left-0 right-0 h-px bg-[#111827]"></div>
-    <div class="absolute left-1/4 top-0 bottom-0 w-px bg-[#111827]"></div>
-    <div class="absolute left-2/4 top-0 bottom-0 w-px bg-[#111827]"></div>
-    <div class="absolute left-3/4 top-0 bottom-0 w-px bg-[#111827]"></div>
-  </div>
-
   <!-- Container centralizado -->
   <div class="max-w-5xl mx-auto text-center px-6">
-    <!-- Badge industrial - 6px corners -->
+    <!-- Badge industrial -->
     <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest border border-indigo-500/30 bg-indigo-500/5 px-4 py-2 rounded-md inline-flex items-center gap-3 mb-8">
       <span class="w-2 h-2 rounded-sm bg-emerald-500 animate-pulse shadow-[0_0_6px_rgba(16,185,129,0.8)]"></span>
       <span>Nota Máxima no Google</span>
@@ -23,72 +13,24 @@ import Button from '../Button.astro';
       <span class="text-zinc-500">Velocidade de Resposta</span>
     </div>
 
-    <!-- H1 - Copy traduzido -->
-    <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[1.05]">
-      Sua Landing Page abre antes dele <span class="text-[#6366F1]">piscar</span>. O lucro vem logo depois.
+    <!-- H1 -->
+    <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-8 leading-[1.1]">
+      O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.
     </h1>
 
-    <!-- Subtítulo traduzido -->
+    <!-- Subtítulo -->
     <p class="text-xl text-zinc-400 max-w-2xl mx-auto mt-4 leading-relaxed">
-      Páginas em código puro que maximizam o retorno dos seus anúncios. Chega de perder clientes por lentidão.
+      Se a sua página demora para abrir, você está pagando para o cliente ir comprar no concorrente. Criamos páginas ultrarrápidas focadas em uma única coisa: fazer o seu telefone tocar.
     </p>
 
-    <!-- Gráfico de Barras Comparativo -->
-    <div class="max-w-lg mx-auto mt-12 p-6 bg-zinc-900/80 border border-[#111827] rounded-md backdrop-blur-sm">
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#111827]">
-        <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-sm bg-[#6366F1]"></span>
-          <span class="font-mono text-xs text-zinc-400">Painel de Performance</span>
-        </div>
-        <div class="flex gap-2">
-          <span class="font-mono text-[10px] text-emerald-500">● ATIVO</span>
-        </div>
-      </div>
-      
-      <!-- Barras comparativas -->
-      <div class="space-y-4">
-        <!-- Barra Site Comum -->
-        <div>
-          <div class="flex justify-between mb-1">
-            <span class="font-mono text-xs text-zinc-500">Site Comum</span>
-            <span class="font-mono text-xs text-zinc-400">5.4s (Lento)</span>
-          </div>
-          <div class="h-3 bg-zinc-800 rounded-sm overflow-hidden">
-            <div class="h-full w-[90%] bg-zinc-600 rounded-sm"></div>
-          </div>
-        </div>
-        
-        <!-- Barra Nossa Engenharia -->
-        <div>
-          <div class="flex justify-between mb-1">
-            <span class="font-mono text-xs text-[#6366F1] font-bold">Nossa Engenharia</span>
-            <span class="font-mono text-xs text-emerald-500 font-bold">0.4s (Instantâneo)</span>
-          </div>
-          <div class="h-3 bg-zinc-800 rounded-sm overflow-hidden">
-            <div class="h-full w-[8%] bg-[#6366F1] rounded-sm shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Resultado -->
-      <div class="mt-6 pt-4 border-t border-[#111827]">
-        <div class="flex justify-between items-center">
-          <span class="font-mono text-xs text-zinc-600">Melhora</span>
-          <span class="font-mono text-2xl font-bold text-emerald-500">+93%</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Botões com cantos de 6px -->
+    <!-- Botão CTA -->
     <div class="flex flex-col sm:flex-row gap-3 items-center justify-center mt-10">
-      <Button variant="primary">Solicitar Análise Grátis</Button>
-      <Button variant="secondary">Falar com Especialista</Button>
+      <Button variant="primary">Ver Planos</Button>
     </div>
     
     <!-- Micro-copy -->
     <p class="font-mono text-xs text-zinc-600 mt-8 tracking-wide">
-      Zero taxa de setup • Hospedagem inclusa
+      Páginas que carregam em menos de 1 segundo
     </p>
   </div>
 </section>

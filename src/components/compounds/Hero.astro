@@ -3,103 +3,84 @@ import Button from '../Button.astro';
 ---
 
 <section class="relative pt-32 pb-20 flex flex-col items-center text-center overflow-hidden">
+  <!-- Grid Lines de Ancoragem (gaiola técnica) -->
+  <div class="absolute inset-0 pointer-events-none -z-10">
+    <div class="absolute top-1/4 left-0 right-0 h-px bg-[#111827]"></div>
+    <div class="absolute top-2/4 left-0 right-0 h-px bg-[#111827]"></div>
+    <div class="absolute top-3/4 left-0 right-0 h-px bg-[#111827]"></div>
+    <div class="absolute left-1/4 top-0 bottom-0 w-px bg-[#111827]"></div>
+    <div class="absolute left-2/4 top-0 bottom-0 w-px bg-[#111827]"></div>
+    <div class="absolute left-3/4 top-0 bottom-0 w-px bg-[#111827]"></div>
+  </div>
+
   <!-- Container centralizado -->
   <div class="max-w-5xl mx-auto text-center px-6">
-    <!-- Badge industrial com borda -->
-    <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest border border-indigo-500/30 bg-indigo-500/5 px-4 py-2 rounded-sm inline-flex items-center gap-3 mb-8">
+    <!-- Badge industrial - 6px corners -->
+    <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest border border-indigo-500/30 bg-indigo-500/5 px-4 py-2 rounded-md inline-flex items-center gap-3 mb-8">
       <span class="w-2 h-2 rounded-sm bg-emerald-500 animate-pulse shadow-[0_0_6px_rgba(16,185,129,0.8)]"></span>
-      <span>Infraestrutura Validada</span>
+      <span>Nota Máxima no Google</span>
       <span class="text-zinc-600">//</span>
-      <span class="text-zinc-500">LCP &lt; 0.8s</span>
+      <span class="text-zinc-500">Velocidade de Resposta</span>
     </div>
 
-    <!-- H1 AGRESSIVO: 40% maior -->
+    <!-- H1 - Copy traduzido -->
     <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-8 leading-[1.05]">
-      Páginas Ultrarrápidas que Transformam <span class="text-[#6366F1]">Conversão</span>.
+      Sua Landing Page abre antes dele <span class="text-[#6366F1]">piscar</span>. O lucro vem logo depois.
     </h1>
 
-    <!-- Subtítulo -->
+    <!-- Subtítulo traduzido -->
     <p class="text-xl text-zinc-400 max-w-2xl mx-auto mt-4 leading-relaxed">
-      Substitua seu site lento por uma infraestrutura de código puro. Pare de perder vendas para a concorrência e faça cada centavo investido em mídia pagar.
+      Páginas em código puro que maximizam o retorno dos seus anúncios. Chega de perder clientes por lentidão.
     </p>
 
-    <!-- Gráfico de Dados (Dashboard Simulado) -->
-    <div class="max-w-md mx-auto mt-12 p-6 bg-zinc-900/80 border border-slate-800 rounded-sm backdrop-blur-sm">
-      <!-- Header do gráfico -->
-      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+    <!-- Gráfico de Barras Comparativo -->
+    <div class="max-w-lg mx-auto mt-12 p-6 bg-zinc-900/80 border border-[#111827] rounded-md backdrop-blur-sm">
+      <!-- Header -->
+      <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#111827]">
         <div class="flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-[#6366F1]"></span>
-          <span class="font-mono text-xs text-zinc-400">NetworkTrace</span>
+          <span class="w-2 h-2 rounded-sm bg-[#6366F1]"></span>
+          <span class="font-mono text-xs text-zinc-400">Painel de Performance</span>
         </div>
         <div class="flex gap-2">
-          <span class="font-mono text-[10px] text-zinc-600">TTFB: 45ms</span>
-          <span class="font-mono text-[10px] text-emerald-500">● LIVE</span>
+          <span class="font-mono text-[10px] text-emerald-500">● ATIVO</span>
         </div>
       </div>
       
-      <!-- Eixos e linha do gráfico -->
-      <div class="relative h-24">
-        <!-- Eixo Y -->
-        <div class="absolute left-0 top-0 bottom-0 w-px bg-slate-800"></div>
-        <!-- Eixo X -->
-        <div class="absolute left-0 right-0 bottom-0 h-px bg-slate-800"></div>
+      <!-- Barras comparativas -->
+      <div class="space-y-4">
+        <!-- Barra Site Comum -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-mono text-xs text-zinc-500">Site Comum</span>
+            <span class="font-mono text-xs text-zinc-400">5.4s (Lento)</span>
+          </div>
+          <div class="h-3 bg-zinc-800 rounded-sm overflow-hidden">
+            <div class="h-full w-[90%] bg-zinc-600 rounded-sm"></div>
+          </div>
+        </div>
         
-        <!-- Linha do gráfico com brilho -->
-        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="graphLine" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#6366F1" stop-opacity="0.3" />
-              <stop offset="50%" stop-color="#6366F1" />
-              <stop offset="100%" stop-color="#10B981" />
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-          <path 
-            d="M0,80 L15,75 L30,60 L45,45 L60,35 L75,25 L90,15 L100,10" 
-            fill="none" 
-            stroke="url(#graphLine)" 
-            stroke-width="2" 
-            filter="url(#glow)"
-          />
-          <path 
-            d="M0,80 L15,75 L30,60 L45,45 L60,35 L75,25 L90,15 L100,10 L100,100 L0,100 Z" 
-            fill="url(#graphLine)" 
-            opacity="0.1"
-          />
-        </svg>
-        
-        <!-- Labels no gráfico -->
-        <div class="absolute bottom-1 left-0 right-0 flex justify-between px-1">
-          <span class="font-mono text-[8px] text-zinc-600">0ms</span>
-          <span class="font-mono text-[8px] text-zinc-600">50ms</span>
-          <span class="font-mono text-[8px] text-zinc-600">100ms</span>
+        <!-- Barra Nossa Engenharia -->
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="font-mono text-xs text-[#6366F1] font-bold">Nossa Engenharia</span>
+            <span class="font-mono text-xs text-emerald-500 font-bold">0.4s (Instantâneo)</span>
+          </div>
+          <div class="h-3 bg-zinc-800 rounded-sm overflow-hidden">
+            <div class="h-full w-[8%] bg-[#6366F1] rounded-sm shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+          </div>
         </div>
       </div>
       
-      <!-- Legenda -->
-      <div class="flex justify-between mt-3 pt-3 border-t border-slate-800">
-        <div class="text-center">
-          <div class="font-mono text-lg font-bold text-white">0.8s</div>
-          <div class="font-mono text-[9px] text-zinc-600">LCP</div>
-        </div>
-        <div class="text-center">
-          <div class="font-mono text-lg font-bold text-emerald-500">45ms</div>
-          <div class="font-mono text-[9px] text-zinc-600">TTFB</div>
-        </div>
-        <div class="text-center">
-          <div class="font-mono text-lg font-bold text-[#6366F1]">98</div>
-          <div class="font-mono text-[9px] text-zinc-600">SCORE</div>
+      <!-- Resultado -->
+      <div class="mt-6 pt-4 border-t border-[#111827]">
+        <div class="flex justify-between items-center">
+          <span class="font-mono text-xs text-zinc-600">Melhora</span>
+          <span class="font-mono text-2xl font-bold text-emerald-500">+93%</span>
         </div>
       </div>
     </div>
 
-    <!-- Botões com nova geometria -->
+    <!-- Botões com cantos de 6px -->
     <div class="flex flex-col sm:flex-row gap-3 items-center justify-center mt-10">
       <Button variant="primary">Solicitar Análise Grátis</Button>
       <Button variant="secondary">Falar com Especialista</Button>

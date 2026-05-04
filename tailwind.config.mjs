@@ -29,7 +29,7 @@ export default {
         surface: '#13131b',
         'primary-fixed-dim': '#c0c1ff',
         'on-surface': '#e4e1ed',
-        background: '#13131b',
+        background: '#000000',
         'on-primary-fixed-variant': '#2f2ebe',
         'border-low': '#111827',
         'surface-container-highest': '#34343d',

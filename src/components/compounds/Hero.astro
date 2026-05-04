@@ -2,66 +2,79 @@
 import Button from '../Button.astro';
 ---
 
-<section class="relative pt-32 pb-16 flex flex-col items-center text-center overflow-hidden">
-  <!-- Container centralizado -->
-  <div class="max-w-4xl mx-auto text-center px-6">
-    <!-- Badge minimalista -->
-    <div class="inline-flex items-center gap-2 text-xs text-emerald-500 mb-8">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-      <span class="font-medium">Nota Máxima no Google Pagespeed</span>
-    </div>
-
-    <!-- H1 -->
-    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
-      O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.
-    </h1>
-
-    <!-- Subtítulo -->
-    <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mt-4 leading-relaxed">
-      Páginas ultra-rápidas que não deixam o cliente do seu anúncio ir embora. Substituímos seu site lento por uma estrutura focada em uma única coisa: fazer seu telefone tocar.
-    </p>
-
-    <!-- Trust Signal - Métrica de Impacto (entre subtítulo e CTA) -->
-    <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 bg-zinc-900/60 border border-zinc-800 rounded-md py-3 px-5 max-w-xl mx-auto">
-      <div class="flex items-center gap-2 whitespace-nowrap">
-        <span class="font-mono text-2xl font-bold text-emerald-400">5 em 10</span>
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
+<section class="relative pt-32 pb-24 bg-black overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <!-- Coluna Esquerda - Textos -->
+    <div class="text-center lg:text-left">
+      <!-- Badge minimalista -->
+      <div class="inline-flex items-center gap-2 text-xs text-emerald-500 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-medium">Nota Máxima no Google Pagespeed</span>
       </div>
-      <span class="text-sm text-zinc-300 text-center sm:text-left">clientes são perdidos por sites lentos antes da página abrir</span>
+
+      <!-- H1 -->
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+        O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto lg:mx-0 mt-4 leading-relaxed">
+        Páginas ultra-rápidas que não dejan o cliente do seu anúncio ir embora. Substituímos seu site lento por uma estrutura focada em uma única coisa: fazer seu telefone tocar.
+      </p>
+
+      <!-- Trust Signal - Métrica de Impacto -->
+      <div class="mt-8 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-2 sm:gap-4 bg-zinc-900/60 border border-zinc-800 rounded-md py-3 px-5 max-w-xl mx-auto lg:mx-0">
+        <div class="flex items-center gap-2 whitespace-nowrap">
+          <span class="font-mono text-2xl font-bold text-emerald-400">5 em 10</span>
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+          </svg>
+        </div>
+        <span class="text-sm text-zinc-300 text-center sm:text-left">clientes são perdidos por sites lentos antes da página abrir</span>
+      </div>
+
+      <!-- Botão CTA -->
+      <div class="mt-10">
+        <Button variant="primary" class="text-base px-10 py-4">Solicitar Análise de Conversão</Button>
+      </div>
     </div>
 
-    <!-- Botão CTA High-Ticket -->
-    <div class="mt-10">
-      <Button variant="primary" class="text-base px-10 py-4">Solicitar Análise de Conversão</Button>
-    </div>
-    
-    <!-- Comparativo de NEGÓCIOS (Cliques vs Leads) -->
-    <div class="max-w-lg mx-auto mt-12 w-full space-y-4">
-      <!-- Barra 1: Cliques Perdidos -->
-      <div class="text-left">
-        <div class="flex justify-between items-center mb-2">
-          <span class="text-sm font-medium text-zinc-500">Cliques perdidos no site antigo</span>
-          <span class="text-xs text-red-400 font-medium">Dinheiro indo embora</span>
-        </div>
-        <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
-          <div class="h-full w-[75%] bg-zinc-700 rounded-sm"></div>
-        </div>
-      </div>
+    <!-- Coluna Direita - Card Premium com Barras -->
+    <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 rounded-md p-8 mt-8 lg:mt-0">
+      <h3 class="text-lg font-semibold text-white mb-6 text-center">Comparativo de Performance</h3>
       
-      <!-- Barra 2: Leads Capturados -->
-      <div class="text-left">
-        <div class="flex justify-between items-center mb-2">
-          <span class="text-sm font-bold text-white">Leads capturados com a Anúncio e Site</span>
-          <span class="text-xs text-emerald-500 font-medium">Clientes ligando pra você</span>
+      <div class="space-y-6">
+        <!-- Barra 1: Site Lento -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium text-zinc-500">Seu Site Atual</span>
+            <span class="text-xs text-red-400 font-medium">Lento</span>
+          </div>
+          <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
+            <div class="h-full w-[25%] bg-zinc-700 rounded-sm"></div>
+          </div>
         </div>
-        <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
-          <div class="h-full w-full bg-[#6366F1] rounded-sm shadow-[0_0_16px_rgba(99,102,241,0.5)]"></div>
+        
+        <!-- Barra 2: Anúncio e Site -->
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-bold text-white">Anúncio e Site</span>
+            <span class="text-xs text-emerald-500 font-medium">Ultra-rápido</span>
+          </div>
+          <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
+            <div class="h-full w-full bg-[#6366F1] rounded-sm shadow-[0_0_16px_rgba(99,102,241,0.5)]"></div>
+          </div>
         </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="mt-6 pt-6 border-t border-zinc-800 text-center">
+        <p class="text-sm text-zinc-400">
+          <span class="text-emerald-400 font-bold">100%</span> dos visitantes reached sua página instantaneamente
+        </p>
       </div>
     </div>
   </div>

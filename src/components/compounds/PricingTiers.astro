@@ -20,7 +20,7 @@ const tiers: Tier[] = [
       'Certificado SSL e Segurança',
     ],
     highlighted: false,
-    cta: 'Quero Minha Página Rápida',
+    cta: 'Quero o Plano Essencial',
   },
   {
     name: 'Plano Performance',
@@ -34,12 +34,12 @@ const tiers: Tier[] = [
       'Suporte Prioritário para Alterações',
     ],
     highlighted: true,
-    cta: 'Quero Mais Clientes Qualificados',
+    cta: 'Quero o Plano Performance',
   },
 ];
 ---
 
-<section class="w-full max-w-5xl mx-auto px-6 py-24 bg-black">
+<section id="planos" class="w-full max-w-5xl mx-auto px-6 py-24 bg-black">
   <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-4">
     Planos
   </h2>
@@ -77,12 +77,14 @@ const tiers: Tier[] = [
             ))}
           </ul>
           
-          <button class:list={[
-            'w-full py-3 px-6 rounded-md font-mono text-sm transition-all duration-150',
-            tier.highlighted 
-              ? 'bg-[#6366F1] text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.5)]' 
-              : 'bg-zinc-800/60 text-zinc-300 border border-zinc-700 hover:bg-zinc-800 hover:text-white'
-          ]}>
+          <button 
+            onclick={`openIntakeForm('${tier.name}', '${tier.price}')`}
+            class:list={[
+              'w-full py-3 px-6 rounded-md font-mono text-sm transition-all duration-150 cursor-pointer',
+              tier.highlighted 
+                ? 'bg-[#6366F1] text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.5)]' 
+                : 'bg-zinc-800/60 text-zinc-300 border border-zinc-700 hover:bg-zinc-800 hover:text-white'
+            ]}>
             {tier.cta}
           </button>
         </div>

@@ -8,38 +8,38 @@ interface Step {
 const steps: Step[] = [
   {
     number: '01',
-    title: 'A Estrutura',
-    description: 'Você escolhe o plano ideal para o momento do seu negócio.',
+    title: 'A Escolha',
+    description: 'Você seleciona o plano de infraestrutura ideal para o momento (e a escala) do seu negócio.',
   },
   {
     number: '02',
     title: 'O Mapa',
-    description: 'Você responde a um questionário simples sobre o seu serviço (sem reuniões intermináveis).',
+    description: 'Você preenche um briefing estratégico de 5 minutos sobre o seu serviço. Sem reuniões intermináveis e sem perda de tempo.',
   },
   {
     number: '03',
     title: 'A Engenharia',
-    description: 'Nós assumimos os bastidores e entregamos a sua infraestrutura pronta e otimizada para receber seus anúncios.',
+    description: 'Nós assumimos os bastidores e entregamos a sua nova página pronta, testada e 100% otimizada para lucrar com seus anúncios.',
   },
 ];
 ---
 
 <section class="py-20">
-  <div class="max-w-container-max mx-auto px-gutter">
-    <h2 class="font-headline-h2 text-headline-h2 text-center mb-12">
+  <div class="max-w-container-max mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-12">
       Do zero à sua página no ar, <span class="text-[#6366F1]">sem dor de cabeça</span>.
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {steps.map((step, index) => (
-        <div class="relative bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 p-8 rounded-lg group">
-          <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#6366F1] rounded-lg flex items-center justify-center font-technical-mono text-technical-metric text-white">
+        <div class="relative bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 p-8 rounded-md group">
+          <div class="absolute -top-3 -left-0 font-mono text-4xl font-bold text-[#6366F1]">
             {step.number}
           </div>
           
-          <h3 class="font-headline-h3 text-headline-h3 mt-4 mb-4">{step.title}</h3>
+          <h3 class="text-xl font-bold text-white mt-8 mb-4">{step.title}</h3>
           
-          <p class="font-body-sm text-body-sm text-text-secondary">
+          <p class="text-sm text-zinc-400 leading-relaxed">
             {step.description}
           </p>
         </div>

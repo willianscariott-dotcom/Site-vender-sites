@@ -5,24 +5,25 @@ import Button from '../Button.astro';
 <section class="relative pt-20 pb-32 flex flex-col items-center text-center">
   <div class="absolute inset-0 engineering-grid -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"></div>
   
-  <div class="bg-zinc-950/80 backdrop-blur-md border border-slate-800 rounded-full px-5 py-2 mb-8">
-    <span class="font-body-sm text-body-sm text-text-secondary">🚀 Otimizado para Google e Meta Ads</span>
+  <div class="bg-zinc-900/50 border border-slate-800 rounded-full px-4 py-2 mb-8 flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+    <span class="font-technical-mono text-[11px] text-zinc-400 tracking-wide">Infraestrutura validada para Google e Meta Ads</span>
   </div>
 
   <h1 class="font-headline-h1 text-headline-h1 max-w-4xl mb-6">
     Páginas Ultrarrápidas que Transformam Cliques em Clientes.
   </h1>
 
-  <p class="font-body-base text-body-base text-text-secondary max-w-2xl mb-10">
+  <p class="font-body-base text-body-base text-text-secondary max-w-2xl mb-10 px-4">
     Substitua seu site lento por uma infraestrutura de código puro. Pare de perder vendas para a concorrência e faça cada centavo investido no Google e no Meta Ads valer a pena.
   </p>
 
-  <div class="flex gap-4 flex-col md:flex-row items-center">
-    <Button variant="primary">Solicitar Análise de Performance</Button>
-    <Button variant="secondary">Como Funciona</Button>
+  <div class="flex flex-col gap-4 items-center w-full px-4 mt-4">
+    <Button variant="primary" class="w-full max-w-sm text-base py-5">Solicitar Análise de Performance</Button>
+    <Button variant="secondary" class="w-full max-w-sm text-base py-5">Como Funciona</Button>
   </div>
   
-  <p class="font-body-sm text-text-secondary mt-6">
+  <p class="font-body-sm text-text-secondary mt-8 px-4">
     Zero taxa de setup. Infraestrutura e hospedagem inclusas.
   </p>
 </section>

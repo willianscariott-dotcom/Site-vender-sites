@@ -39,17 +39,16 @@ const tiers: Tier[] = [
 ];
 ---
 
-<section class="py-20 bg-black">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-4">
-      Planos
-    </h2>
-    
-    <p class="text-zinc-400 text-center max-w-xl mx-auto mb-12">
-      Infraestrutura de conversão sem dor de cabeça. Você foca nos anúncios, a gente cuida da página.
-    </p>
+<section class="w-full max-w-5xl mx-auto px-6 py-24 bg-black">
+  <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white text-center mb-4">
+    Planos
+  </h2>
+  
+  <p class="text-zinc-400 text-center max-w-xl mx-auto mb-12">
+    Infraestrutura de conversão sem dor de cabeça. Você foca nos anúncios, a gente cuida da página.
+  </p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-12 items-center">
       {tiers.map((tier) => (
         <div class:list={[
           'relative bg-zinc-900/40 backdrop-blur-xl border rounded-md p-8',

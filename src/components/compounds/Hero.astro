@@ -13,7 +13,7 @@ import Button from '../Button.astro';
       </div>
 
       <!-- H1 -->
-      <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.15]">
+      <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
         O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.
       </h1>
 
@@ -43,38 +43,50 @@ import Button from '../Button.astro';
     </div>
 
     <!-- Coluna Direita - Card Premium com Barras -->
-    <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 rounded-md p-8 mt-8 lg:mt-0">
-      <h3 class="text-lg font-semibold text-white mb-6 text-center">Comparativo de Performance</h3>
+    <div class="relative w-full mt-8 lg:mt-0">
+      <!-- Glow behind card -->
+      <div class="absolute -inset-4 bg-indigo-500/20 blur-[80px] rounded-full pointer-events-none"></div>
       
-      <div class="space-y-6">
-        <!-- Barra 1: Site Lento -->
-        <div>
-          <div class="flex justify-between items-center mb-2">
-            <span class="text-sm font-medium text-zinc-500">Seu Site Atual</span>
-            <span class="text-xs text-red-400 font-medium">Lento</span>
-          </div>
-          <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
-            <div class="h-full w-[25%] bg-zinc-700 rounded-sm"></div>
-          </div>
+      <div class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 rounded-md p-10 relative">
+        <!-- Fake code lines -->
+        <div class="absolute top-4 left-4 right-4 flex items-center gap-2 text-xs text-zinc-600 font-mono">
+          <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> [Network] OK</span>
+          <span class="flex items-center gap-1 ml-4"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> [TTFB] 45ms</span>
+          <span class="flex items-center gap-1 ml-4"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> [LCP] 1.2s</span>
         </div>
         
-        <!-- Barra 2: Anúncio e Site -->
-        <div>
-          <div class="flex justify-between items-center mb-2">
-            <span class="text-sm font-bold text-white">Anúncio e Site</span>
-            <span class="text-xs text-emerald-500 font-medium">Ultra-rápido</span>
+        <h3 class="text-lg font-semibold text-white mb-6 text-center mt-6">Comparativo de Performance</h3>
+        
+        <div class="space-y-6 mt-8">
+          <!-- Barra 1: Site Lento -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-medium text-zinc-500">Seu Site Atual</span>
+              <span class="text-xs text-red-400 font-medium">Lento</span>
+            </div>
+            <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
+              <div class="h-full w-[25%] bg-zinc-700 rounded-sm"></div>
+            </div>
           </div>
-          <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
-            <div class="h-full w-full bg-[#6366F1] rounded-sm shadow-[0_0_16px_rgba(99,102,241,0.5)]"></div>
+          
+          <!-- Barra 2: Anúncio e Site -->
+          <div>
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm font-bold text-white">Anúncio e Site</span>
+              <span class="text-xs text-emerald-500 font-medium">Ultra-rápido</span>
+            </div>
+            <div class="h-3 bg-zinc-800/50 rounded-sm overflow-hidden">
+              <div class="h-full w-full bg-[#6366F1] rounded-sm shadow-[0_0_16px_rgba(99,102,241,0.5)]"></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Resultado -->
-      <div class="mt-6 pt-6 border-t border-zinc-800 text-center">
-        <p class="text-sm text-zinc-400">
-          <span class="text-emerald-400 font-bold">100%</span> dos visitantes reached sua página instantaneamente
-        </p>
+        <!-- Resultado -->
+        <div class="mt-6 pt-6 border-t border-zinc-800 text-center">
+          <p class="text-sm text-zinc-400">
+            <span class="text-emerald-400 font-bold">100%</span> dos visitantes reached sua página instantaneamente
+          </p>
+        </div>
       </div>
     </div>
   </div>

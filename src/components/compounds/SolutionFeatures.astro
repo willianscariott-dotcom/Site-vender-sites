@@ -3,6 +3,7 @@ interface Feature {
   icon: 'zap' | 'target' | 'shield';
   title: string;
   description: string;
+  label: string;
 }
 
 const features: Feature[] = [
@@ -10,62 +11,76 @@ const features: Feature[] = [
     icon: 'zap',
     title: 'Velocidade Imediata',
     description: 'Nós construímos o seu site em código puro, sem plugins pesados. A página abre em um piscar de olhos, garantindo que todo visitante veja a sua oferta instantaneamente.',
+    label: '01 // LATÊNCIA',
   },
   {
     icon: 'target',
     title: 'Foco Total em Vendas',
     description: 'Removemos menus confusos e distrações. Sua página terá um único objetivo: guiar o visitantes diretamente para o contato com a sua equipe.',
+    label: '02 // CONVERSÃO',
   },
   {
     icon: 'shield',
     title: 'Você Foca no Negócio, Nós na Tecnologia',
     description: 'Esqueça atualizações de sistema ou quedas de servidor. Nossa assinatura inclui hospedagem de ponta e segurança total. Seu site nunca sai do ar.',
+    label: '03 // UPTIME',
   },
 ];
 ---
 
-<section class="py-24 relative">
-  <!-- Textura de fundo sutil -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.03)_0%,transparent_70%)] -z-10"></div>
-  
-  <div class="max-w-container-max mx-auto px-gutter">
-    <h2 class="font-headline-h2 text-headline-h2 text-center mb-12">
-      Engenharia de conversão. <span class="text-[#6366F1]">Sem enrolação.</span>
+<section class="max-w-7xl mx-auto px-6 py-24 relative">
+  <!-- Título da seção -->
+  <div class="text-center mb-16">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-4">
+      Engenharia de conversão. <span class="text-indigo-400">Sem enrolação.</span>
     </h2>
+    <p class="text-zinc-500 max-w-xl mx-auto">
+      three pillars of performance for your business
+    </p>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {features.map((feature, index) => (
-        <article class="bento-border bg-zinc-900/60 backdrop-blur-md rounded-2xl p-8 relative overflow-hidden group hover:border-indigo-500/60 transition-all duration-300">
-          <!-- Brilho de canto -->
-          <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-500/20 transition-all duration-300"></div>
-          
-          <div class="relative z-10">
-            <div class="mb-6 p-3 bg-zinc-800/50 rounded-xl w-fit">
-              {feature.icon === 'zap' && (
-                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>
-              )}
-              {feature.icon === 'target' && (
-                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                </svg>
-              )}
-              {feature.icon === 'shield' && (
-                <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                </svg>
-              )}
-            </div>
-            
-            <h3 class="font-headline-h3 text-headline-h3 mb-3 text-white">{feature.title}</h3>
-            
-            <p class="font-body-sm text-body-sm text-zinc-400 leading-relaxed">
-              {feature.description}
-            </p>
+  <!-- Bento Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {features.map((feature, index) => (
+      <article class="bg-zinc-900/40 backdrop-blur-xl border border-zinc-800 rounded-3xl p-8 lg:p-10 relative overflow-hidden group hover:border-indigo-500/50 transition-all duration-300 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+        <!-- Brilho direcional no topo -->
+        <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent"></div>
+        
+        <!-- Micro-label no canto -->
+        <div class="absolute top-4 right-4 font-mono text-xs text-zinc-600 tracking-wider">
+          {feature.label}
+        </div>
+        
+        <!-- Brilho de canto -->
+        <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-indigo-500/20 transition-all duration-500"></div>
+        
+        <div class="relative z-10 mt-4">
+          <!-- Ícone em container de vidro -->
+          <div class="mb-6 p-4 bg-zinc-800/30 rounded-2xl w-fit border border-zinc-700/50">
+            {feature.icon === 'zap' && (
+              <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            )}
+            {feature.icon === 'target' && (
+              <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+              </svg>
+            )}
+            {feature.icon === 'shield' && (
+              <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+              </svg>
+            )}
           </div>
-        </article>
-      ))}
-    </div>
+          
+          <h3 class="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+          
+          <p class="text-zinc-400 leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      </article>
+    ))}
   </div>
 </section>

@@ -2,32 +2,34 @@
 import Button from '../Button.astro';
 ---
 
-<section class="relative pt-20 pb-32 flex flex-col items-center text-center overflow-hidden">
-  <!-- Grid de engenharia via -->
-  <div class="absolute inset-0 engineering-grid -z-10 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]"></div>
-  
-  <!-- Brilho radial sutil no centro -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-600/5 rounded-full blur-3xl -z-10"></div>
-  
-  <div class="bg-zinc-900/60 border border-slate-800/60 rounded-full px-5 py-2.5 mb-8 flex items-center gap-3 backdrop-blur-sm">
-    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-    <span class="font-technical-mono text-[11px] text-zinc-400 tracking-wide uppercase">Infraestrutura validada</span>
+<section class="relative pt-32 pb-20 flex flex-col items-center text-center overflow-hidden">
+  <!-- Container centralizado -->
+  <div class="max-w-4xl mx-auto text-center px-6">
+    <!-- Micro-textura: Badge monoespaçado -->
+    <div class="font-mono text-xs text-indigo-400 uppercase tracking-widest border border-indigo-500/30 bg-indigo-500/10 px-3 py-1.5 rounded-full inline-flex items-center gap-2 mb-6">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+      Infraestrutura Validada
+    </div>
+
+    <!-- Título massivo -->
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+      Páginas Ultrarrápidas que Transformam <span class="text-indigo-400">Cliques em Clientes</span>.
+    </h1>
+
+    <!-- Subtítulo com max-w-2xl -->
+    <p class="text-lg text-zinc-400 max-w-2xl mx-auto mt-6 leading-relaxed">
+      Substitua seu site lento por uma infraestrutura de código puro. Pare de perder vendas para a concorrência e faça cada centavo investido no Google e no Meta Ads valer a pena.
+    </p>
+
+    <!-- Botões -->
+    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mt-10">
+      <Button variant="primary" class="text-base px-8 py-4 shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_40px_rgba(99,102,241,0.5)]">Solicitar Análise de Performance</Button>
+      <Button variant="secondary" class="text-base px-8 py-4">Como Funciona</Button>
+    </div>
+    
+    <!-- Micro-copy -->
+    <p class="font-mono text-xs text-zinc-600 mt-8 tracking-wide">
+      Zero taxa de setup • Infraestrutura e hospedagem inclusas
+    </p>
   </div>
-
-  <h1 class="font-headline-h1 text-headline-h1 max-w-3xl mb-6 px-4">
-    Páginas Ultrarrápidas que Transformam Cliques em Clientes.
-  </h1>
-
-  <p class="font-body-base text-body-base text-text-secondary max-w-xl mb-10 px-4 leading-relaxed">
-    Substitua seu site lento por uma infraestrutura de código puro. Pare de perder vendas para a concorrência e faça cada centavo investido no Google e no Meta Ads valer a pena.
-  </p>
-
-  <div class="flex flex-col gap-4 items-center w-full px-4 mt-2">
-    <Button variant="primary" class="w-full max-w-sm text-base py-5 shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_40px_rgba(99,102,241,0.5)]">Solicitar Análise de Performance</Button>
-    <Button variant="secondary" class="w-full max-w-sm text-base py-5">Como Funciona</Button>
-  </div>
-  
-  <p class="font-body-sm text-zinc-500 mt-8 px-4">
-    Zero taxa de setup • Infraestrutura e hospedagem inclusas
-  </p>
 </section>

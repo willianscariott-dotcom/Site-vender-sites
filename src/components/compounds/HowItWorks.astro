@@ -2,56 +2,72 @@
 interface Step {
   number: string;
   title: string;
+  time: string;
   description: string;
 }
 
 const steps: Step[] = [
   {
     number: '01',
-    title: 'A Escolha',
-    description: 'Você seleciona o plano de infraestrutura ideal para o momento (e a escala) do seu negócio.',
+    title: 'Escolha seu plano',
+    time: '2 minutos',
+    description: 'Selecione o plano que melhor encaixa no momento do seu negócio. Essencial para quem está começando, Performance para quem quer escalar.',
   },
   {
     number: '02',
-    title: 'O Mapa',
-    description: 'Você preenche um briefing estratégico de 5 minutos sobre o seu serviço. Sem reuniões intermináveis e sem perda de tempo.',
+    title: 'Nos conte sobre seu negócio',
+    time: '5 minutos',
+    description: 'Você preenche um formulário rápido com as informações do seu serviço, público e diferenciais. Sem reuniões, sem burocracia.',
   },
   {
     number: '03',
-    title: 'A Engenharia',
-    description: 'Nós assumimos os bastidores e entregamos a sua nova página pronta, testada e 100% otimizada para lucrar com seus anúncios.',
+    title: 'Receba sua página pronta',
+    time: 'Em até 5 dias úteis',
+    description: 'Nós montamos, testamos e entregamos sua landing page já no ar, otimizada para velocidade e pronta para receber seus anúncios.',
   },
 ];
 ---
 
 <section class="w-full max-w-7xl mx-auto px-6 py-32 bg-transparent">
-  <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white text-center mb-24 font-['Outfit']">
-    Do zero à sua página no ar, <span class="text-[#6366F1]">sem dor de cabeça</span>.
-  </h2>
+
+  <div class="text-center mb-20">
+    <p class="font-mono text-xs text-[#6366F1] tracking-[0.2em] uppercase mb-4">Como Funciona</p>
+    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white font-['Outfit']">
+      Do zero à sua página no ar,<br class="hidden md:block" />
+      <span class="text-[#6366F1]">sem dor de cabeça</span>.
+    </h2>
+  </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-      {steps.map((step, index) => (
-        <div class:list={[
-          "relative bg-[#111115]/60 backdrop-blur-xl border border-zinc-800/60 p-10 rounded-3xl group overflow-hidden transition-all duration-500 hover:border-zinc-700 hover:bg-[#111115]/80",
-          index === 1 ? "md:mt-12" : index === 2 ? "md:mt-24" : ""
-        ]}>
-          <!-- Huge faded number in background -->
-          <div class="absolute -bottom-6 -right-6 font-['Outfit'] text-[120px] font-bold text-white/[0.02] pointer-events-none select-none transition-all duration-500 group-hover:scale-110 group-hover:text-white/[0.04]">
-            {step.number}
-          </div>
-          
-          <div class="font-mono text-sm font-medium text-[#6366F1] mb-6 flex items-center gap-2">
-            <div class="w-8 h-px bg-[#6366F1]/50"></div>
-            ETAPA {step.number}
-          </div>
-          
-          <h3 class="text-2xl font-bold text-white mb-4 font-['Outfit'] tracking-tight relative z-10">{step.title}</h3>
-          
-          <p class="text-base text-zinc-400 leading-relaxed relative z-10">
-            {step.description}
-          </p>
+    {steps.map((step, index) => (
+      <div class:list={[
+        "relative bg-[#111115]/60 backdrop-blur-xl border border-zinc-800/60 p-10 rounded-3xl group overflow-hidden transition-all duration-500 hover:border-zinc-700 hover:bg-[#111115]/80",
+        index === 1 ? "md:mt-10" : index === 2 ? "md:mt-20" : ""
+      ]}>
+        <!-- Huge faded number -->
+        <div class="absolute -bottom-6 -right-4 font-['Outfit'] text-[110px] font-bold text-white/[0.025] pointer-events-none select-none group-hover:text-white/[0.045] transition-all duration-500">
+          {step.number}
         </div>
-      ))}
-    </div>
+
+        <!-- Step indicator -->
+        <div class="font-mono text-xs font-medium text-[#6366F1] mb-8 flex items-center gap-3">
+          <div class="w-6 h-px bg-[#6366F1]/50"></div>
+          ETAPA {step.number}
+        </div>
+
+        <!-- Title -->
+        <h3 class="text-xl font-bold text-white mb-2 font-['Outfit'] tracking-tight relative z-10">
+          {step.title}
+        </h3>
+
+        <!-- Time badge -->
+        <p class="text-xs font-mono text-emerald-500/80 mb-4 relative z-10">{step.time}</p>
+
+        <!-- Description -->
+        <p class="text-sm text-zinc-400 leading-relaxed relative z-10">
+          {step.description}
+        </p>
+      </div>
+    ))}
   </div>
 </section>

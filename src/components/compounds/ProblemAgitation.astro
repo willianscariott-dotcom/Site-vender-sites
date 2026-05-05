@@ -1,31 +1,42 @@
 ---
 ---
 
-<section class="py-24 relative overflow-hidden bg-transparent">
-  <!-- Subtle ambient glow -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-zinc-900/50 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-  
-  <div class="max-w-container-max mx-auto px-gutter">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="font-['Outfit'] text-4xl md:text-5xl font-bold mb-10 text-white tracking-tight">
-        Seu site atual pode estar <span class="text-zinc-500 line-through decoration-red-500/50 decoration-4">sabotando</span> suas vendas.
-      </h2>
-      
-      <!-- Card destacado com problema -->
-      <div class="bg-[#111115]/90 backdrop-blur-xl border border-red-900/20 rounded-3xl p-10 text-left shadow-2xl relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/20 to-transparent"></div>
-        <p class="font-body-base text-zinc-300 leading-relaxed text-lg">
-          Você paga caro para o cliente clicar no seu anúncio. Mas quando ele clica, a página demora para abrir. O resultado? <span class="text-white font-medium bg-red-500/10 px-2 py-1 rounded-md">Ele desiste de esperar e vai comprar do seu concorrente.</span>
-        </p>
-        <p class="font-body-base text-zinc-400 mt-4 leading-relaxed">
-          Construtores de sites comuns (como WordPress e Wix) são pesados e lentos, e as plataformas de anúncios punem sites lentos cobrando mais caro por cada clique.
-        </p>
-      </div>
-      
-      <!-- Call to action -->
-      <p class="font-body-sm text-zinc-500 mt-8">
-        Clique no botão abaixo para descobrirmos juntos o que está sabotando seus resultados.
+<section class="py-28 relative overflow-hidden bg-transparent">
+
+  <div class="max-w-3xl mx-auto px-6 text-center">
+
+    <!-- Eyebrow -->
+    <p class="font-mono text-xs text-red-400/80 tracking-[0.2em] uppercase mb-6">O Problema</p>
+
+    <h2 class="font-['Outfit'] text-4xl md:text-5xl font-bold mb-10 text-white tracking-tight leading-tight">
+      Seu site atual pode estar<br class="hidden md:block" />
+      <span class="relative inline-block mt-1">
+        <span class="relative z-10 text-zinc-400">afastando seus clientes.</span>
+        <span class="absolute bottom-1 left-0 w-full h-0.5 bg-red-500/40"></span>
+      </span>
+    </h2>
+
+    <!-- Card principal do problema -->
+    <div class="bg-[#111115]/90 backdrop-blur-xl border border-red-900/20 rounded-3xl p-10 text-left shadow-2xl relative overflow-hidden mb-6">
+      <!-- Linha de acento superior -->
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-500/30 to-transparent"></div>
+
+      <p class="text-zinc-300 leading-relaxed text-lg mb-5">
+        Você investe dinheiro em anúncios no Google ou no Instagram para trazer clientes. Mas quando eles clicam, a página demora para abrir — e a paciência deles acaba em segundos.
+      </p>
+      <p class="text-zinc-400 leading-relaxed text-base mb-5">
+        O resultado? <span class="text-white font-medium">O visitante fecha a aba antes mesmo de ver o que você oferece</span>, e vai buscar o concorrente. Você pagou pelo clique, mas perdeu a venda.
+      </p>
+      <p class="text-zinc-400 leading-relaxed text-base">
+        Plataformas como WordPress e Wix foram feitas para sites institucionais cheios de páginas — não para converter anúncios. Elas são pesadas por design, e as plataformas de anúncios <span class="text-zinc-300">cobram mais caro por cada clique</span> quando seu site é lento.
       </p>
     </div>
+
+    <!-- Dado de impacto -->
+    <div class="flex items-center justify-center gap-4 bg-zinc-900/40 border border-zinc-800/60 rounded-2xl py-4 px-6 max-w-lg mx-auto">
+      <span class="font-['Outfit'] text-3xl font-bold text-red-400 shrink-0">5 em 10</span>
+      <span class="text-sm text-zinc-400 text-left">visitantes abandonam uma página que demora mais de 3 segundos para abrir. <span class="text-zinc-500">(Fonte: Google)</span></span>
+    </div>
+
   </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-// Opção 5: Checklist de diagnóstico — problemas do site atual vs Anúncio e Site
+// Opção 5: Checklist equilibrado — 4 problemas vs 4 soluções
 ---
 <section class="relative pt-32 pb-24 bg-transparent overflow-hidden">
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -26,55 +26,60 @@
       </div>
     </div>
 
-    <!-- Direita: Checklist diagnóstico -->
+    <!-- Direita: Checklist equilibrado -->
     <div class="relative w-full mt-8 lg:mt-0">
       <div class="absolute -inset-4 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
       <div class="bg-[#111115]/80 backdrop-blur-xl border border-zinc-800/80 rounded-3xl p-8 shadow-2xl">
 
-        <!-- Coluna Antes -->
-        <div class="mb-6">
-          <p class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">Seu site atual provavelmente...</p>
-          <div class="space-y-3">
-            {[
-              'Demora mais de 3 segundos para abrir',
-              'Não tem botão de WhatsApp visível',
-              'Tem menus que distraem o visitante',
-              'Perde mais da metade dos acessos no celular',
-            ].map(item => (
-              <div class="flex items-start gap-3 p-3.5 bg-red-500/5 border border-red-900/20 rounded-xl">
-                <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/>
-                  <path d="M5 5l6 6M11 5l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                </svg>
-                <span class="text-sm text-zinc-400 leading-snug">{item}</span>
-              </div>
-            ))}
+        <div class="grid grid-cols-2 gap-6">
+          <!-- Coluna Negativa -->
+          <div>
+            <p class="text-xs font-mono text-red-400/80 uppercase tracking-widest mb-4">Site atual</p>
+            <div class="space-y-3">
+              {[
+                'Demora mais de 3 segundos',
+                'Sem botão de contato fixo',
+                'Menus que distraem o cliente',
+                'Perde metade dos acessos mobile',
+              ].map(item => (
+                <div class="flex items-start gap-2.5 p-3 bg-red-500/5 border border-red-900/20 rounded-xl">
+                  <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/>
+                    <path d="M5 5l6 6M11 5l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span class="text-xs text-zinc-400 leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Coluna Positiva -->
+          <div>
+            <p class="text-xs font-mono text-[#6366F1] uppercase tracking-widest mb-4">Anúncio e Site</p>
+            <div class="space-y-3">
+              {[
+                'Abre em menos de 1 segundo',
+                'Botão de contato sempre visível',
+                'Foco total em um objetivo',
+                'Construída 100% para celular',
+              ].map(item => (
+                <div class="flex items-start gap-2.5 p-3 bg-[#6366F1]/5 border border-[#6366F1]/20 rounded-xl">
+                  <svg class="w-4 h-4 text-[#6366F1] mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/>
+                    <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="text-xs text-zinc-200 leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div class="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent my-5"></div>
-
-        <!-- Coluna Depois -->
-        <div>
-          <div class="flex items-center gap-2 mb-4">
-            <span class="text-xs font-mono text-[#6366F1] uppercase tracking-widest">Com Anúncio e Site</span>
-          </div>
-          <div class="space-y-3">
-            {[
-              'Abre em menos de 1 segundo no celular',
-              'Botão de WhatsApp sempre visível e fixo',
-            ].map(item => (
-              <div class="flex items-start gap-3 p-3.5 bg-[#6366F1]/5 border border-[#6366F1]/20 rounded-xl">
-                <svg class="w-4 h-4 text-[#6366F1] mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/>
-                  <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="text-sm text-zinc-200 leading-snug">{item}</span>
-              </div>
-            ))}
-          </div>
+        <div class="mt-6 pt-5 border-t border-zinc-800/60 text-center">
+          <p class="text-sm text-zinc-400">
+            Cada problema tem <span class="text-white font-medium">uma solução direta</span> — entregue em até 5 dias.
+          </p>
         </div>
-
       </div>
     </div>
   </div>

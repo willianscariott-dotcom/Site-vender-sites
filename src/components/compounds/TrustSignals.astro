@@ -1,0 +1,66 @@
+---
+const metrics = [
+  { value: '100', unit: '/100', label: 'Nota no Google PageSpeed', note: 'Meta técnica de entrega' },
+  { value: '< 1.5s', unit: '', label: 'Tempo de carregamento', note: 'Em média nas páginas entregues' },
+  { value: '5', unit: ' dias', label: 'Prazo de entrega', note: 'Da aprovação do briefing à página no ar' },
+];
+
+const integrations = [
+  { name: 'Meta Ads', svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 8C13.37 8 8 13.37 8 20s5.37 12 12 12 12-5.37 12-12S26.63 8 20 8zm-2.5 17.5v-11l8 5.5-8 5.5z" fill="#1877F2"/></svg>` },
+  { name: 'Google Ads', svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 8a12 12 0 100 24A12 12 0 0020 8zm0 4a8 8 0 110 16A8 8 0 0120 12zm0 3a5 5 0 100 10A5 5 0 0020 15z" fill="#4285F4"/></svg>` },
+  { name: 'WhatsApp', svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 8C13.37 8 8 13.37 8 20c0 2.13.56 4.13 1.54 5.86L8 32l6.28-1.51A11.93 11.93 0 0020 32c6.63 0 12-5.37 12-12S26.63 8 20 8zm5.5 16.5c-.24.67-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.95-4.37-.15-.2-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.59-.37.79-.37h.56c.18 0 .42-.07.66.5l.84 2.05c.07.17.12.37.01.57l-.32.5-.46.54c-.15.16-.3.34-.13.66.17.32.77 1.27 1.65 2.05 1.13 1.01 2.09 1.32 2.39 1.47.3.15.47.12.65-.08l.58-.68c.18-.22.37-.15.62-.06l1.96.92c.3.14.5.21.57.33.07.12.07.68-.17 1.35z" fill="#25D366"/></svg>` },
+  { name: 'Google Analytics', svg: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="10" width="6" height="20" rx="3" fill="#E37400"/><rect x="17" y="17" width="6" height="13" rx="3" fill="#E37400" fill-opacity="0.7"/><rect x="10" y="22" width="6" height="8" rx="3" fill="#E37400" fill-opacity="0.4"/></svg>` },
+];
+---
+
+<section class="w-full max-w-5xl mx-auto px-6 py-20 bg-transparent reveal-section">
+
+  <!-- Metrics row -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20">
+    {metrics.map((m) => (
+      <div class="bg-[#111115]/60 border border-zinc-800/50 rounded-2xl p-7 text-center hover:border-zinc-700 transition-all duration-300">
+        <div class="font-['Outfit'] text-4xl font-bold text-white mb-1">
+          {m.value}<span class="text-[#6366F1] text-2xl">{m.unit}</span>
+        </div>
+        <p class="text-zinc-200 text-sm font-medium mb-1">{m.label}</p>
+        <p class="text-zinc-500 text-xs">{m.note}</p>
+      </div>
+    ))}
+  </div>
+
+  <!-- Guarantee card -->
+  <div class="relative bg-[#0f0f14] border border-[#6366F1]/20 rounded-3xl p-10 md:p-14 text-center overflow-hidden mb-20">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.06)_0%,transparent_70%)] pointer-events-none"></div>
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6366F1]/40 to-transparent"></div>
+
+    <div class="relative z-10">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[#6366F1]/10 border border-[#6366F1]/20 mb-6">
+        <svg class="w-5 h-5 text-[#6366F1]" viewBox="0 0 20 20" fill="none">
+          <path d="M9 12.5l-3-3 1.4-1.4L9 9.7l4.6-4.6L15 6.5 9 12.5z" fill="currentColor"/>
+          <path d="M10 1.5L2.5 5v5c0 4.4 3.2 8.5 7.5 9.5 4.3-1 7.5-5.1 7.5-9.5V5L10 1.5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h3 class="font-['Outfit'] text-2xl md:text-3xl font-bold text-white mb-4">
+        Sua página pronta em 5 dias úteis — ou <span class="text-[#6366F1]">você não paga o primeiro mês</span>.
+      </h3>
+      <p class="text-zinc-400 text-base max-w-xl mx-auto leading-relaxed">
+        Cumprimos o prazo. Se por algum motivo extraordinário isso não acontecer, o primeiro mês da sua assinatura é por nossa conta. Sem burocracia.
+      </p>
+    </div>
+  </div>
+
+  <!-- Integrations -->
+  <div class="text-center">
+    <p class="font-mono text-xs text-zinc-600 tracking-[0.2em] uppercase mb-8">Compatível com as ferramentas que você já usa</p>
+    <div class="flex flex-wrap items-center justify-center gap-10">
+      {integrations.map((tool) => (
+        <div class="flex items-center gap-2.5 text-zinc-500 hover:text-zinc-300 transition-colors duration-200 group">
+          <div class="w-7 h-7 opacity-50 group-hover:opacity-100 transition-opacity duration-200" set:html={tool.svg}></div>
+          <span class="text-sm font-medium">{tool.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</section>

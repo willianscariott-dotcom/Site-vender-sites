@@ -6,42 +6,71 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: 'Eu já tenho um site institucional, preciso de uma landing page?',
-    answer: 'Sim. Um site institucional é como um catálogo cheio de rotas de fuga. Uma landing page é desenhada exclusivamente para receber quem clicou no seu anúncio e fazê-lo entrar em contato.',
+    question: 'Eu já tenho um site, preciso de uma landing page?',
+    answer: 'Sim. Um site institucional é como um catálogo cheio de páginas — o visitante se perde e vai embora sem entrar em contato. Uma landing page tem um único objetivo: fazer quem clicou no seu anúncio te chamar no WhatsApp. São ferramentas diferentes para propósitos diferentes.',
   },
   {
-    question: 'Eu preciso pagar hospedagem ou domínio à parte?',
-    answer: 'A hospedagem de altíssima velocidade e a segurança já estão inclusas na sua assinatura. Você só precisa ter o seu domínio.',
+    question: 'Preciso pagar hospedagem ou domínio à parte?',
+    answer: 'A hospedagem já está inclusa na sua assinatura, sem custo extra. Você só precisa ter o seu domínio (o endereço do site, como "minhaempresa.com.br"). Se ainda não tiver, te ajudamos a registrar um.',
+  },
+  {
+    question: 'Em quanto tempo minha página fica pronta?',
+    answer: 'Após o preenchimento do briefing (que leva cerca de 5 minutos), sua página fica pronta em até 5 dias úteis, já hospedada e testada.',
   },
   {
     question: 'E se eu quiser cancelar?',
-    answer: 'Nós não queremos prender você. O cancelamento pode ser solicitado a qualquer momento de acordo com os termos do seu pacote.',
+    answer: 'Sem burocracia. O cancelamento pode ser solicitado a qualquer momento, respeitando o período de fidelidade do seu pacote. Não prendemos ninguém.',
   },
 ];
 ---
 
-<section class="py-20">
-  <div class="max-w-container-max mx-auto px-gutter">
-    <h2 class="font-headline-h2 text-headline-h2 text-center mb-6">
-      Perguntas <span class="text-[#6366F1]">Frequentes</span>
-    </h2>
-    
-    <p class="font-body-base text-body-base text-text-secondary text-center max-w-2xl mx-auto mb-16">
-      Tire suas dúvidas sobre nossa metodologia e modelos de serviço.
-    </p>
+<section id="duvidas" class="py-28 bg-transparent">
+  <div class="max-w-3xl mx-auto px-6">
 
-    <div class="max-w-3xl mx-auto space-y-4">
+    <div class="text-center mb-16">
+      <p class="font-mono text-xs text-[#6366F1] tracking-[0.2em] uppercase mb-4">Dúvidas</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white font-['Outfit'] mb-5">
+        Perguntas <span class="text-[#6366F1]">Frequentes</span>
+      </h2>
+      <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mx-auto">
+        As dúvidas mais comuns de quem está chegando agora.
+      </p>
+    </div>
+
+    <div class="space-y-3">
       {faqs.map((faq, index) => (
-        <details class="group bg-zinc-950/80 backdrop-blur-[12px] border border-slate-800 rounded-lg overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer font-headline-h3 text-headline-h3 list-none">
-            <span>{faq.question}</span>
-            <span class="text-[#6366F1] group-open:rotate-180 transition-transform duration-150">▼</span>
+        <details class="group bg-[#111115]/70 backdrop-blur-xl border border-zinc-800/60 rounded-2xl overflow-hidden transition-all duration-300 hover:border-zinc-700/80">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none gap-4">
+            <span class="text-white font-medium text-base leading-snug font-['Outfit']">{faq.question}</span>
+            <!-- Animated +/- icon -->
+            <span class="shrink-0 w-6 h-6 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-open:border-[#6366F1] group-open:text-[#6366F1] transition-all duration-300">
+              <svg class="w-3 h-3 group-open:rotate-45 transition-transform duration-300" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
           </summary>
-          <div class="px-6 pb-6 font-body-sm text-body-sm text-text-secondary">
+          <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800/40 pt-4">
             {faq.answer}
           </div>
         </details>
       ))}
+    </div>
+
+    <!-- CTA pós-FAQ -->
+    <div class="mt-14 text-center">
+      <p class="text-zinc-500 text-sm mb-4">Ainda tem dúvidas? Fale direto com a gente.</p>
+      <a
+        href="https://wa.me/51999402810?text=Olá! Tenho dúvidas sobre os planos do Anúncio e Site."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-medium text-[#6366F1] hover:text-indigo-400 transition-colors duration-200 underline underline-offset-4"
+      >
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.549 4.11 1.508 5.84L0 24l6.335-1.493A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.49-5.194-1.349l-.372-.22-3.762.887.948-3.667-.24-.386A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+        </svg>
+        Chamar no WhatsApp
+      </a>
     </div>
   </div>
 </section>

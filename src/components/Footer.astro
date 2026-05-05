@@ -1,17 +1,10 @@
 ---
 const currentYear = new Date().getFullYear();
 
-const mainLinks = [
-  { label: 'Serviços', href: '#' },
-  { label: 'Cases', href: '#' },
-  { label: 'Blog', href: '#' },
-  { label: 'Contato', href: '#' },
-];
-
-const nicheLinks = [
-  { label: 'Landing Pages para Akademy', href: '#' },
-  { label: 'Landing Pages para E-commerce', href: '#' },
-  { label: 'Landing Pages para SaaS', href: '#' },
+const navLinks = [
+  { label: 'Planos', href: '#planos' },
+  { label: 'Dúvidas', href: '#duvidas' },
+  { label: 'WhatsApp', href: 'https://wa.me/51999402810' },
 ];
 
 const legalLinks = [
@@ -20,62 +13,54 @@ const legalLinks = [
 ];
 ---
 
-<footer class="w-full py-16 border-t border-zinc-900 bg-zinc-950 border-zinc-900 bg-[radial-gradient(#18181b_1px,transparent_1px)] [background-size:20px_20px]">
-  <div class="max-w-screen-2xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-      <div>
-        <div class="font-inter text-lg font-extrabold tracking-[-0.03em] mb-4">
-          <span class="text-text-primary">Anúncio</span><span class="text-[#6366F1]">e Site</span>
+<footer class="w-full pt-16 pb-8 border-t border-zinc-900/80 bg-[#0a0a0c]">
+  <div class="max-w-screen-xl mx-auto px-6">
+
+    <!-- Top row -->
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-10 mb-14">
+
+      <!-- Marca + tagline -->
+      <div class="max-w-xs">
+        <div class="font-['Outfit'] text-xl font-bold tracking-tight mb-3">
+          <span class="text-white">Anúncio</span><span class="text-[#6366F1]">e Site</span>
         </div>
-        <p class="font-body-sm text-body-sm text-zinc-500">
-          Páginas ultrarrápidas que transformam cliques em clientes.
+        <p class="text-zinc-500 text-sm leading-relaxed">
+          Páginas de alta performance que transformam cliques em contatos no WhatsApp.
         </p>
       </div>
-      
-      <div>
-        <h4 class="font-inter font-bold text-sm text-text-primary mb-4">Navegação</h4>
-        <ul class="space-y-2">
-          {mainLinks.map((link) => (
-            <li>
-              <a class="font-body-sm text-body-sm text-zinc-500 hover:text-zinc-100 transition-colors duration-150" href={link.href}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      <div>
-        <h4 class="font-inter font-bold text-sm text-text-primary mb-4">Soluções por Nicho</h4>
-        <ul class="space-y-2">
-          {nicheLinks.map((link) => (
-            <li>
-              <a class="font-body-sm text-body-sm text-zinc-500 hover:text-zinc-100 transition-colors duration-150" href={link.href}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      
-      <div>
-        <h4 class="font-inter font-bold text-sm text-text-primary mb-4">Legal</h4>
-        <ul class="space-y-2">
-          {legalLinks.map((link) => (
-            <li>
-              <a class="font-body-sm text-body-sm text-zinc-500 hover:text-zinc-100 transition-colors duration-150" href={link.href}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      <!-- Nav links -->
+      <nav class="flex flex-wrap gap-x-8 gap-y-3">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
     </div>
-    
-    <div class="pt-8 border-t border-zinc-900">
-      <p class="font-inter text-xs text-zinc-500 text-center">
-        © {currentYear} <span class="text-text-primary">Anúncio</span><span class="text-[#6366F1]">e Site</span> — Todos os direitos reservados.
+
+    <!-- Divider -->
+    <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-800 to-transparent mb-8"></div>
+
+    <!-- Bottom row -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-zinc-600">
+        © {currentYear} <span class="text-zinc-500">Anúncio e Site</span> — Todos os direitos reservados.
       </p>
+
+      <div class="flex gap-6">
+        {legalLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-xs text-zinc-600 hover:text-zinc-400 transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </footer>

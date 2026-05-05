@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroV3 from '../components/compounds/HeroV3.astro';
+---
+<Layout title="[Preview V3] Antes e Depois">
+  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#6366F1]/5 blur-[160px] rounded-full pointer-events-none -z-10"></div>
+  <div class="fixed top-0 left-0 w-full z-[999] bg-yellow-400 text-black text-xs font-mono font-bold text-center py-2 flex items-center justify-center gap-4">
+    <span>👁 PREVIEW — Variante 3: Antes e Depois</span>
+    <a href="/preview-v1" class="underline">→ Ver V1</a>
+    <a href="/preview-v2" class="underline">→ Ver V2</a>
+    <a href="/preview-v5" class="underline">→ Ver V5</a>
+    <a href="/" class="underline">→ Voltar ao original</a>
+  </div>
+  <div class="pt-8">
+    <Header />
+    <main class="relative bg-transparent">
+      <div class="max-w-container-max mx-auto">
+        <HeroV3 />
+      </div>
+    </main>
+  </div>
+</Layout>

@@ -1,0 +1,105 @@
+---
+// Opção 2: Feed de notificações animado — mostra o resultado (telefone tocando)
+---
+
+<section class="relative pt-32 pb-24 bg-transparent overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Coluna Esquerda (igual em todas as variantes) -->
+    <div class="text-center lg:text-left">
+      <div class="inline-flex items-center gap-2 text-xs text-emerald-500 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-medium">Nota Máxima no Google Pagespeed</span>
+      </div>
+      <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight font-['Outfit']">
+        O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto lg:mx-0 mt-4 leading-relaxed">
+        Nossa infraestrutura garante que nenhuma oportunidade seja perdida. Substituímos seu site lento por uma estrutura de alta performance focada em uma única coisa: fazer seu telefone tocar.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-2 sm:gap-4 bg-zinc-900/60 border border-zinc-800 rounded-2xl py-3 px-5 max-w-xl mx-auto lg:mx-0">
+        <span class="font-mono text-2xl font-bold text-emerald-400 whitespace-nowrap">5 em 10</span>
+        <span class="text-sm text-zinc-300 text-center sm:text-left">clientes são perdidos por sites lentos antes da página abrir <span class="text-zinc-500">(dados do Google)</span></span>
+      </div>
+      <div class="mt-10">
+        <a href="#planos" class="inline-flex items-center gap-2 text-base px-8 py-4 bg-[#6366F1] text-white font-semibold rounded-xl hover:bg-indigo-500 hover:shadow-[0_0_24px_rgba(99,102,241,0.4)] transition-all active:scale-[0.97]">
+          Ver Planos
+          <svg class="w-4 h-4" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Coluna Direita — VARIANTE 2: Feed de notificações ao vivo -->
+    <div class="relative w-full mt-8 lg:mt-0">
+      <div class="absolute -inset-4 bg-emerald-500/5 blur-[80px] rounded-full pointer-events-none"></div>
+
+      <div class="bg-[#111115]/80 backdrop-blur-xl border border-zinc-800/80 rounded-3xl p-8 relative shadow-2xl">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h3 class="text-base font-semibold text-white font-['Outfit']">Contatos recebidos hoje</h3>
+            <p class="text-xs text-zinc-500 mt-0.5">Via WhatsApp — atualizado agora</p>
+          </div>
+          <div class="flex items-center gap-1.5 text-xs text-emerald-500 font-mono bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            AO VIVO
+          </div>
+        </div>
+
+        <!-- Feed de notificações -->
+        <div class="space-y-3" id="notification-feed">
+          {[
+            { name: 'Carla M.', msg: 'Quero um orçamento para instalação de ar-condicionado', time: 'agora', delay: 0 },
+            { name: 'João P.', msg: 'Preciso de assistência técnica urgente, pode me atender hoje?', time: '2 min', delay: 200 },
+            { name: 'Rafael S.', msg: 'Vi o anúncio e quero saber mais sobre o serviço', time: '7 min', delay: 400 },
+            { name: 'Ana L.', msg: 'Boa tarde, gostaria de fazer um agendamento', time: '15 min', delay: 600 },
+          ].map((notif, i) => (
+            <div
+              class="flex items-start gap-3 p-4 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl notification-item"
+              style={`animation-delay: ${notif.delay}ms`}
+            >
+              <!-- Avatar -->
+              <div class="w-9 h-9 rounded-full bg-[#6366F1]/20 border border-[#6366F1]/30 flex items-center justify-center shrink-0">
+                <span class="text-xs font-bold text-[#6366F1]">{notif.name.charAt(0)}</span>
+              </div>
+              <!-- Content -->
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="text-sm font-medium text-white">{notif.name}</span>
+                  <span class="text-xs text-zinc-500 shrink-0">{notif.time}</span>
+                </div>
+                <p class="text-xs text-zinc-400 leading-relaxed line-clamp-2">{notif.msg}</p>
+              </div>
+              <!-- WhatsApp icon -->
+              <div class="shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.549 4.11 1.508 5.84L0 24l6.335-1.493A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.655-.49-5.194-1.349l-.372-.22-3.762.887.948-3.667-.24-.386A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Contador -->
+        <div class="mt-5 pt-5 border-t border-zinc-800/60 flex items-center justify-between">
+          <p class="text-sm text-zinc-400">Total hoje</p>
+          <span class="font-['Outfit'] text-2xl font-bold text-white">
+            <span class="text-emerald-400">↑</span> 12 contatos
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .notification-item {
+    animation: slideIn 0.5s ease both;
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(16px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+</style>

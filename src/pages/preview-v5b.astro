@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroV5B from "../components/compounds/HeroV5B.astro";
+---
+<Layout title="[Preview] V5-B: Pulso no Card">
+  <div class="fixed top-0 left-0 w-full z-[999] bg-yellow-400 text-black text-[10px] font-mono font-bold py-1.5 flex flex-wrap items-center justify-center gap-2 px-4">
+    <strong>V5-B: Pulso no Card</strong>
+    <a href="/preview-v3b" class="underline">V3-B: Antes Destaque Mobile</a> <a href="/preview-v3c" class="underline">V3-C: Antes Alto + 2 Depois</a> <a href="/preview-v5a" class="underline">V5-A: Spinner no X</a> <a href="/preview-v5b" class="underline">V5-B: Pulso no Card</a> <a href="/preview-v5c" class="underline">V5-C: Barra Presa</a> <a href="/preview-v5d" class="underline">V5-D: Typewriter</a> <a href="/preview-v5e" class="underline">V5-E: Spinner + Pulso</a>
+    <a href="/" class="underline font-bold">Home</a>
+  </div>
+  <div class="pt-8">
+    <Header />
+    <main class="relative bg-transparent">
+      <HeroV5B />
+    </main>
+  </div>
+</Layout>

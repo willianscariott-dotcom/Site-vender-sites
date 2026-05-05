@@ -1,0 +1,67 @@
+---
+// V5-C: Barra de progresso presa em 95%
+---
+<section class="relative pt-32 pb-24 bg-transparent overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <div class="text-center lg:text-left">
+      <div class="inline-flex items-center gap-2 text-xs text-emerald-500 mb-8"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span class="font-medium">Nota Máxima no Google Pagespeed</span></div>
+      <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight font-['Outfit']">O Site Que Transforma Seus Anúncios em <span class="text-[#6366F1]">Clientes no WhatsApp</span>.</h1>
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto lg:mx-0 mt-4 leading-relaxed">Nossa infraestrutura garante que nenhuma oportunidade seja perdida. Substituímos seu site lento por uma estrutura focada em uma única coisa: fazer seu telefone tocar.</p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-2 sm:gap-4 bg-zinc-900/60 border border-zinc-800 rounded-2xl py-3 px-5 max-w-xl mx-auto lg:mx-0">
+        <span class="font-mono text-2xl font-bold text-emerald-400 whitespace-nowrap">5 em 10</span>
+        <span class="text-sm text-zinc-300 text-center sm:text-left">clientes perdidos por sites lentos <span class="text-zinc-500">(Google)</span></span>
+      </div>
+      <div class="mt-10"><a href="#planos" class="inline-flex items-center gap-2 text-base px-8 py-4 bg-[#6366F1] text-white font-semibold rounded-xl hover:bg-indigo-500 hover:shadow-[0_0_24px_rgba(99,102,241,0.4)] transition-all">Ver Planos<svg class="w-4 h-4" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    </div>
+
+    <div class="relative w-full mt-8 lg:mt-0">
+      <div class="absolute -inset-4 bg-indigo-500/10 blur-[80px] rounded-full pointer-events-none"></div>
+      <div class="bg-[#111115]/80 backdrop-blur-xl border border-zinc-800/80 rounded-3xl p-8 shadow-2xl">
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <p class="text-xs font-mono text-red-400/80 uppercase tracking-widest mb-4">Site atual</p>
+            <div class="space-y-3">
+              {['Demora mais de 3 segundos','Sem botão de contato fixo','Menus que distraem o cliente','Perde metade dos acessos mobile'].map((item, i) => (
+                <div class="flex flex-col gap-1.5 p-3 bg-red-500/5 border border-red-900/20 rounded-xl">
+                  <div class="flex items-start gap-2.5">
+                    <svg class="w-4 h-4 text-red-500 mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/><path d="M5 5l6 6M11 5l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span class="text-xs text-zinc-400 leading-snug">{item}</span>
+                  </div>
+                  <!-- C: Barra de progresso presa em 95% -->
+                  <div class="h-1 bg-zinc-800 rounded-full overflow-hidden ml-6">
+                    <div class="h-full bg-red-500/50 rounded-full stuck-progress" style={`animation-delay: ${i * 0.3}s`}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-mono text-[#6366F1] uppercase tracking-widest mb-4">Anúncio e Site</p>
+            <div class="space-y-3">
+              {['Abre em menos de 1 segundo','Botão de contato sempre visível','Foco total em um objetivo','Otimizada para onde seus clientes estão: o celular'].map(item => (
+                <div class="flex items-start gap-2.5 p-3 bg-[#6366F1]/5 border border-[#6366F1]/20 rounded-xl">
+                  <svg class="w-4 h-4 text-[#6366F1] mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/><path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span class="text-xs text-zinc-200 leading-snug">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 pt-5 border-t border-zinc-800/60 text-center">
+          <p class="text-sm text-zinc-400">Cada problema tem <span class="text-white font-medium">uma solução direta</span> — entregue em até 5 dias.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes stuck {
+    0% { width: 0%; }
+    70% { width: 92%; }
+    85%, 100% { width: 92%; }
+  }
+  .stuck-progress {
+    animation: stuck 2.5s ease-out infinite;
+  }
+</style>
